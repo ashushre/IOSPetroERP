@@ -1,0 +1,7 @@
+{
+  "name": "PetroERP",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}

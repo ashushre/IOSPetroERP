@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "208271392258",
+    "firebase_url": "https://petrotest-6625f.firebaseio.com",
+    "project_id": "petrotest-6625f",
+    "storage_bucket": "petrotest-6625f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:208271392258:android:d91e7dd30c7db23cc0311b",
+        "android_client_info": {
+          "package_name": "io.stytechhub.petroerp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "208271392258-er2on59o2svgqdlm99898jtsq6e25d9b.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDiCYOcUhy2ptug1OtsNfar8OsBI7nGH5U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "208271392258-er2on59o2svgqdlm99898jtsq6e25d9b.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
