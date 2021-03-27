@@ -8,7 +8,7 @@ import { CreditSale } from '../../../app/credit.sale';
 import { BasicDataProvider } from '../../../providers/basic-data/basic-data';
 import { SalesDataProvider } from '../../../providers/sales-data/sales-data';
 import { TransDataProvider } from '../../../providers/trans-data/trans-data';
-import { BarcodeScanner, BarcodeScannerOptions } from '@ionic-native/barcode-scanner';
+//import { BarcodeScanner, BarcodeScannerOptions } from '@ionic-native/barcode-scanner';
 @IonicPage()
 @Component({
   selector: 'page-credit-sale',
@@ -35,7 +35,7 @@ export class CreditSalePage {
   currentRate:number;
   scanData: any;
 
-  options: BarcodeScannerOptions;
+ // options: BarcodeScannerOptions;
   showEmpty: boolean;
   transporter: boolean = false;
   transporterInput: boolean = false;
@@ -49,7 +49,7 @@ export class CreditSalePage {
     public navParams: NavParams,
     public toast: ToastController,
     public platform: Platform,
-    public brScanner: BarcodeScanner,
+  //  public brScanner: BarcodeScanner,
     public alertCtrl: AlertController,
     private loadingCtrl: LoadingController,
     public basicData: BasicDataProvider,
@@ -690,46 +690,46 @@ selectNozzle(selVal) {
 readQR() 
   {
 
-  this.options = 
-  {
-    prompt: "Scan your QRcode "
-  }
+  // this.options = 
+  // {
+  //   prompt: "Scan your QRcode "
+  // }
 
-  this.brScanner.scan(this.options).then((barcodeData) => 
-  {
-    if (barcodeData.cancelled) 
-    {
-      this.basicData.sendErrorNotification("you cancelled QRCode Scanning")
-      return false;
-    }
-    else 
-    {
-      console.log(barcodeData);
-      this.scanData = JSON.stringify(barcodeData.text);
-      this.scanData = JSON.parse(this.scanData);
-      for (var i = 0; i < this.nozzleListFilter.length; i++) 
-      {
-        if (this.nozzleListFilter[i].QRDisplayName == this.scanData) 
-        {
-          this.QRnoozleList = this.nozzleListFilter[i];
-        }
-      }
+  // this.brScanner.scan(this.options).then((barcodeData) => 
+  // {
+  //   if (barcodeData.cancelled) 
+  //   {
+  //     this.basicData.sendErrorNotification("you cancelled QRCode Scanning")
+  //     return false;
+  //   }
+  //   else 
+  //   {
+  //     console.log(barcodeData);
+  //     this.scanData = JSON.stringify(barcodeData.text);
+  //     this.scanData = JSON.parse(this.scanData);
+  //     for (var i = 0; i < this.nozzleListFilter.length; i++) 
+  //     {
+  //       if (this.nozzleListFilter[i].QRDisplayName == this.scanData) 
+  //       {
+  //         this.QRnoozleList = this.nozzleListFilter[i];
+  //       }
+  //     }
 
-      if (this.QRnoozleList == null) 
-      {
-        this.basicData.sendErrorNotification("Sorry this nozzle is not assigned to you ")
-        this.scanData = null;
-      }
-      else 
-      {
-        this.selectNozzle(this.QRnoozleList);
-      }
-    }
-  }, 
-  (err) => 
-  {
-    console.log("Error occured : " + err);
-  });
+  //     if (this.QRnoozleList == null) 
+  //     {
+  //       this.basicData.sendErrorNotification("Sorry this nozzle is not assigned to you ")
+  //       this.scanData = null;
+  //     }
+  //     else 
+  //     {
+  //       this.selectNozzle(this.QRnoozleList);
+  //     }
+  //   }
+  // }, 
+  // (err) => 
+  // {
+  //   console.log("Error occured : " + err);
+  // });
 
   
 }

@@ -31,7 +31,7 @@ import { LoginPage } from '../pages/ALLContent/login/login';
 import { TransporterPage } from '../pages/TransportersContent/transporter/transporter'
 import { AppVersion } from '@ionic-native/app-version';
 //import { InAppBrowser } from '@ionic-native/in-app-browser';
-import { BarcodeScanner } from '@ionic-native/barcode-scanner';
+// import { BarcodeScanner } from '@ionic-native/barcode-scanner';
 import { PipesModule } from '../pipes/pipes.module';
 //import { FCM } from '@ionic-native/fcm';
 import {FCM} from '@ionic-native/fcm';
@@ -96,7 +96,7 @@ import {FCM} from '@ionic-native/fcm';
     TransDataProvider,
     SalesDataProvider,
     CreditDataProvider,
-    BarcodeScanner,
+  //  BarcodeScanner,
     AppVersion,
     { provide: ErrorHandler, useClass: IonicErrorHandler },
     ReportsProvider,

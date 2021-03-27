@@ -22,7 +22,6 @@
     "@angular/platform-browser-dynamic": "5.2.11",
     "@ionic-native/app-update": "^4.18.0",
     "@ionic-native/app-version": "^4.20.0",
-    "@ionic-native/barcode-scanner": "^4.20.0",
     "@ionic-native/core": "~4.12.0",
     "@ionic-native/fcm": "^3.9.0",
     "@ionic-native/file-transfer": "^4.12.0",

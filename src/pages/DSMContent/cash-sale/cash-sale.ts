@@ -11,7 +11,7 @@ import { CashSale } from '../../../app/cash.sale';
 import { Driver } from '../../../app/driver';
 import { SalesDataProvider } from '../../../providers/sales-data/sales-data';
 import { DSMReports } from '../../../app/DSMReports';
-import { BarcodeScanner, BarcodeScannerOptions } from '@ionic-native/barcode-scanner';
+//import { BarcodeScanner, BarcodeScannerOptions } from '@ionic-native/barcode-scanner';
 
 @IonicPage()
 @Component({
@@ -22,7 +22,7 @@ export class CashSalePage {
   user: FormGroup;
   other: FormGroup;
   scanData: any;
-  options: BarcodeScannerOptions;
+  //options: BarcodeScannerOptions;
   public cashsale = new CashSale;
   public dsm = new DSMReports;
   query: number;
@@ -46,7 +46,7 @@ export class CashSalePage {
   //  private camera: Camera,
     public navCtrl: NavController,
     public appCtrl: App,
-    public brScanner: BarcodeScanner,
+ //   public brScanner: BarcodeScanner,
     public alertCtrl: AlertController,
     private loadingCtrl: LoadingController,
     private transfer: FileTransfer,
@@ -587,36 +587,36 @@ console.log("1")
   }
 
   readQR() {
-    console.log("readQR");
-    this.options = {
-      prompt: "Scan your QRcode "
-    }
-    this.brScanner.scan(this.options).then((barcodeData) => {
-      if (barcodeData.cancelled) {
-        this.basicData.sendErrorNotification("You Cancelled QRCode Scanning")
-        return false;
-      }
-      else {
-        console.log(barcodeData);
-        this.scanData = JSON.stringify(barcodeData.text);
-        this.scanData = JSON.parse(this.scanData);
-        for (var i = 0; i < this.dsm.nozzleList.length; i++) {
-          if (this.dsm.nozzleList[i].QRDisplayName == this.scanData) {
-            this.noozleList = this.dsm.nozzleList[i];
-          }
-        }
-        if (this.noozleList == null) {
-          this.basicData.sendErrorNotification("Sorry this nozzle is not assigned to you ")
-          this.scanData = null;
-        }
-        else {
-          this.selectNozzleList(this.noozleList);
-        }
-      }
-    }, (err) => {
-      console.log("Error occured : " + err);
-    });
+  //   console.log("readQR");
+  //   this.options = {
+  //     prompt: "Scan your QRcode "
+  //   }
+  //   this.brScanner.scan(this.options).then((barcodeData) => {
+  //     if (barcodeData.cancelled) {
+  //       this.basicData.sendErrorNotification("You Cancelled QRCode Scanning")
+  //       return false;
+  //     }
+  //     else {
+  //       console.log(barcodeData);
+  //       this.scanData = JSON.stringify(barcodeData.text);
+  //       this.scanData = JSON.parse(this.scanData);
+  //       for (var i = 0; i < this.dsm.nozzleList.length; i++) {
+  //         if (this.dsm.nozzleList[i].QRDisplayName == this.scanData) {
+  //           this.noozleList = this.dsm.nozzleList[i];
+  //         }
+  //       }
+  //       if (this.noozleList == null) {
+  //         this.basicData.sendErrorNotification("Sorry this nozzle is not assigned to you ")
+  //         this.scanData = null;
+  //       }
+  //       else {
+  //         this.selectNozzleList(this.noozleList);
+  //       }
+  //     }
+  //   }, (err) => {
+  //     console.log("Error occured : " + err);
+  //   });
 
-  }
+   }
 
 }
