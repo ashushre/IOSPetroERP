@@ -8,6 +8,26 @@ page-p-owner-home {
     .label {
         margin: 6px 8px 6px 0;
     }
+//     ion-scroll {
+//     white-space: nowrap;
+//     height: 500px;
+// }
+.forecast_container{
+    flex-wrap: nowrap;
+    overflow-x: scroll!important;
+    overflow-y: hidden;
+  }
+  ion-scroll .scroll-content {
+    left: -15px;
+    right: 0;
+    top: -91px;
+    bottom: 17px;
+    position: absolute;
+    overflow-y: hidden;
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
+    will-change: scroll-position;
+}
     .card {
         margin: -10px 0px 10px 0px !important;
         width: 100%;

@@ -156,9 +156,12 @@
             </ion-row>
           </ion-card-content>
         </ion-card>
+        
       </div>
       <!-- </div> -->
+    
     </ion-row>
+   
   </div>
 
 
@@ -177,6 +180,7 @@
         </ion-col>
      
       </ion-row>
+     
   </div>
 
   <ion-row align-items-start class="tab-bg-assertive">
@@ -196,4 +200,14 @@
         <b>100%</b>
       </ion-col>
   </ion-row>
+  <div *ngIf="categoryShow" class="text-center" style="text-align:center;">
+    <button ion-button full color="primary"  (click)="DownloadPDFCategory()">
+       &nbsp;Download  PDF&nbsp; 
+        </button>
+     </div>
+     <div *ngIf="dateShow" class="text-center" style="text-align:center;">
+      <button ion-button full color="primary"  (click)="DownloadPDFDate()">
+         &nbsp;Download  PDF&nbsp; 
+          </button>
+       </div>
 </ion-content>

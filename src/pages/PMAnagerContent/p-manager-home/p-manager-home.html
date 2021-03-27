@@ -7,6 +7,8 @@
       </ion-col>
       <ion-col col-10>
         <ion-title class="centerali">{{name}} [Manager]</ion-title>
+        <!-- <ion-title class="centerali">Assign Shift</ion-title> -->
+
       </ion-col>
       <ion-col col-1>
         <button ion-button float-right menuToggle icon-only style="display: block !important;"  >
@@ -30,11 +32,11 @@
       to {{alertTime.endDateTime  | date:"hh:mm a"}}.<br>Please plan your job accordingly
     </ion-label>
   </div>
-  <!-- <div *ngIf="activeCS==1" text-wrap (click)="toggleGroup(1)" [ngClass]="{active: isGroupShown(1)}">
+   <!-- <div  text-wrap (click)="toggleGroup(1)" [ngClass]="{active: isGroupShown(1)}">
     <div class="info-box bg-primary">
       <div class="info-box-content">
         <ion-row class="mar">
-          <span class="info-box-text">Requests</span>
+          <span class="info-box-text">MPD1 </span>
         </ion-row>
       </div>
       <div class="info-box-content" style="text-align:right;">
@@ -48,26 +50,40 @@
         <ion-card-content>
 
           <ion-row  class="oilpurchase" align-items-start>
-            <ion-col  style="margin-left:0px;color: red;">
-              Cash Requests
+            <ion-col col-3  style="margin-left:0px;color: red;">
+             Working
             </ion-col>
-            <ion-col  *ngIf="transPump.totalInProgress" style="color:red;" text-right>
-              {{transPump.totalInProgress |Mcurrency}}
-            </ion-col>
-            <ion-col  *ngIf="!transPump.totalInProgress" style="color:red;" text-right>
-              0
-            </ion-col>
+            <ion-col col-3 style="color: red;">
+              Assigned
+                 </ion-col>
+                 <ion-col  col-3 style="color: red;">
+                 Start Reading
+                 </ion-col>
+                 <ion-col   col-3 style="color: red;"  text-right>
+                 Assign To
+                  </ion-col>
           </ion-row>
 
           <ion-row  class="oilpurchase2" align-items-start>
-            <ion-col style="margin-left:0px;">
-              Pending Requests
+            <ion-col col-3 style="margin-left:0px;">
+              <b></b>
             </ion-col>
-            <ion-col *ngIf="transPump.totalPending!==undefined"  text-right>
-              {{transPump.totalPending |Mcurrency}}
+            <ion-col col-3 >
+              <b>Satbir</b>
             </ion-col>
-            <ion-col *ngIf="transPump.totalPending==undefined"  text-right>
-              {{transPump.totalPending |Mcurrency}}
+            <ion-col col-3>
+              <b>800000</b>
+            </ion-col>
+            <ion-col  text-right>
+              <ion-item class="oilpurchase2" style="color:red;">
+                <ion-label slack style="padding-left: 10px;color:red;">Select Product</ion-label>
+                <ion-select [(ngModel)]="productId" class="form-control" #reqFuel (ionChange)="ProductSelect(reqFuel.value)">
+                  <ion-option value=0 selected>All</ion-option>
+                  <ion-option *ngFor="let prod of productList;let i = index" [selected]="i===0" [value]="prod.id">
+                    &nbsp;&nbsp; {{prod.name}}
+                  </ion-option>
+                </ion-select>
+                </ion-item>
             </ion-col>
           </ion-row>
 
@@ -84,6 +100,9 @@
       </ion-card>
     </div>
   </div> -->
+ 
+
+
 
   <!-- Oil Purchased -->
   <!-- <div text-wrap (click)="toggleGroup(2)" [ngClass]="{active: isGroupShown(2)}">
@@ -328,6 +347,7 @@
       </ion-card>
     </div>
   </div> -->
+
 
 </ion-content>
 

@@ -62,6 +62,11 @@ export class POwnerHomePage {
   DailysaleStock: Reports;
   alertTime: any;
   flag: any;
+  salesTotal: number;
+  CumTotal: number;
+  StockTotal: number;
+  AvgSales: number;
+  projTotal: number;
 
 
   constructor(
@@ -123,6 +128,8 @@ export class POwnerHomePage {
 
   ionViewDidLoad() {
     this.checkAlertDown();
+   
+    
     this.storage.get("pumpId").then(val => {
       this.pumpId = val;
       this.allDashboradReport();
@@ -143,7 +150,7 @@ export class POwnerHomePage {
     }, err => {
       console.log(err);
     });
-    this.storage.get("name").then(val => {
+    this.storage.get("username").then(val => {
       this.name = val;
     }, err => {
       console.log(err);
@@ -390,6 +397,37 @@ export class POwnerHomePage {
     this.reportData.getDailySaleStock(this.pumpId).subscribe(res => {
       console.log(res);
       this.DailysaleStock = res;
+      this.salesTotal=0;
+      this.CumTotal=0;
+      this.StockTotal=0;
+      this.AvgSales=0;
+      this.projTotal=0;
+      for(var i=0;i<res.sales.length;i++)
+      {
+this.salesTotal=parseFloat(res.sales[i].sales)+this.salesTotal;
+      }
+      for(var i=0;i<res.cumSales.length;i++)
+      {
+this.CumTotal=parseFloat(res.cumSales[i].cumSales)+this.CumTotal;
+        
+      }
+
+      for(var i=0;i<res.stock.length;i++)
+      {
+this.StockTotal=parseFloat(res.stock[i].stock)+this.StockTotal;
+     console.log(this.StockTotal,res.stock[i].stock)   
+      }
+      for(var i=0;i<res.avg.length;i++)
+      {
+this.AvgSales=parseFloat(res.avg[i].avg)+this.AvgSales;
+        
+      }
+      for(var i=0;i<res.projMonth.length;i++)
+      {
+this.projTotal=parseFloat(res.projMonth[i].projMonth)+this.projTotal;
+        
+      }
+  
     });
   }
   checkAlertDown() {

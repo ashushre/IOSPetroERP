@@ -35,6 +35,7 @@ export class OilPurchasePage {
   show: boolean = false;
   view: boolean = false;
   showRecord: boolean = false;
+  url: any;
   constructor(public navCtrl: NavController,
     public navParams: NavParams,
     public platform: Platform,
@@ -196,6 +197,8 @@ export class OilPurchasePage {
       loading.dismiss();
       this.FuelSoldList = res;
       this.FuelDetail = this.FuelSoldList.AllPO;
+      this.url=res.link;
+
       if (this.FuelDetail.length == 0) {
         this.showRecord = true;
         this.view = false;
@@ -211,6 +214,11 @@ export class OilPurchasePage {
       );
     });
   }
+  DownloadPDF(){
+ 
+    window.open(this.url,"_system");
+   
+}
   // menuClick() {
   //   this.basicData.checkPumpCount();
   // }

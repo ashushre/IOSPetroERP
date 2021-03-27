@@ -59,8 +59,7 @@ export class TdriverAddPage {
   }
 Open()
 {
- // window.open("https://play.google.com/store/apps/details?id=io.stytechhub.petroerp&hl=en_IN","_system");
-  window.open("https://itunes.apple.com/in/app/petromapp/id1447604487?mt=8","_system")
+  window.open("https://play.google.com/store/apps/details?id=io.stytechhub.petroerp&hl=en_IN","_system");
 
 }
   // addDriver() {

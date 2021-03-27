@@ -53,6 +53,7 @@ export class transporterReport {
   creditLimitList: any[] = [];
   consumedList: any[] = [];
   paymentList: any[] = [];
+  getOutstanding: any;
 
     constructor() {
     }

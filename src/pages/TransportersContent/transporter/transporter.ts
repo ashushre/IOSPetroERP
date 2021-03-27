@@ -34,6 +34,8 @@ export class TransporterPage {
   recievedData: any;
   alertTime: any;
   flag: any;
+  Outstanding: any;
+  totalOutstanding: void;
 
 
   constructor(public navCtrl: NavController,
@@ -192,7 +194,7 @@ this.transData.getTransporterPumpList(this.trans.transporterId).subscribe(
   //All Reports
   getTransporterAllFunction() {
     this.transReport.allRequest(this.trans.transporterId, this.trans.pumpId,this.trans.ProductPumpId, this.trans.vehicleId).subscribe(res => {
-      console.log(res);
+      console.log(res,res.getOutstanding);
 
       this.trans.pumpList = res.getPumpList;
       this.payment = res.getPumpWisePaymentReports;
@@ -206,7 +208,9 @@ this.transData.getTransporterPumpList(this.trans.transporterId).subscribe(
       this.pending = res.getPumpwisePendingRequest;
 
       this.productsList=res.getProductRatePumpWise;
-
+      this.Outstanding=res.getOutstanding.tansporters;
+      this.totalOutstanding=res.getOutstanding.totalAmt;
+console.log(this.Outstanding)
       this.payment.totPending=Math.round(this.payment.totPending);
       this.payment.totPaid=Math.round(this.payment.totPaid);
       this.payment.totDueAmount=Math.round(this.payment.totDueAmount);

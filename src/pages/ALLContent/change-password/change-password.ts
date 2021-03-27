@@ -61,6 +61,7 @@ export class ChangePasswordPage {
     this.userInfo.changePassword = this.navParams.get('userInfo');
     this.storage.get('userType').then((val) => {
       this.userInfo.userType = val;
+      console.log(this.userInfo.userType)
     },err=>{
       console.log(err);
     });

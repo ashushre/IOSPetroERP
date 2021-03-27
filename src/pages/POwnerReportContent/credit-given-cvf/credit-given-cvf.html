@@ -154,6 +154,11 @@
       <div text-center *ngIf="fuelEmpty" style="padding-top:10px;">
         "No Fuel Records are Present"
       </div>
+      <div class="text-center" style="text-align:center;">
+        <button ion-button full color="primary"  (click)="DownloadPDFFuel()">
+           &nbsp;Download  PDF&nbsp; 
+            </button>
+         </div>
 
     </ion-list>
 
@@ -197,7 +202,11 @@
       <div text-center *ngIf="cashEmpty" style="padding-top:10px;">
         "No Cash Records are Present"
       </div>
-
+      <div class="text-center" style="text-align:center;">
+        <button ion-button full color="primary"  (click)="DownloadPDFCash()">
+           &nbsp;Download  PDF &nbsp; 
+            </button>
+         </div>
     </ion-list>
 
     <!-- Total -->
@@ -240,7 +249,11 @@
       <div text-center *ngIf="totalEmpty" style="padding-top:10px;">
         "No Total Records are Present"
       </div>
-
+      <div class="text-center" style="text-align:center;">
+        <button ion-button full color="primary"  (click)="DownloadPDFTotal()">
+           &nbsp;Download  PDF&nbsp; 
+            </button>
+         </div>
     </ion-list>
 
   </div>

@@ -239,9 +239,9 @@
             <ion-col class="Regular-sales-dash" text-right>
               Ltr
             </ion-col>
-            <ion-col class="Regular-sales-dash" text-right>
+            <!-- <ion-col class="Regular-sales-dash" text-right>
               Rs
-            </ion-col>
+            </ion-col> -->
           </ion-row>
 
           <ion-row *ngFor="let oil of pumpSummaryFilter;let index=index; let odd=odd; let even=even;" class="row"
@@ -257,14 +257,13 @@
             <ion-col *ngIf="oil.quantity==0" text-right text-wrap>
               -
             </ion-col>
-            <ion-col *ngIf="oil.amount!==0" text-right text-wrap>
+            <!-- <ion-col *ngIf="oil.amount!==0" text-right text-wrap>
                 {{oil.amount | Mcurrency}}
-              <!-- {{oil.amount |Mcurrency :'&nbsp;': 'symbol-narrow':"1.0"}} -->
               
             </ion-col>
             <ion-col *ngIf="oil.amount==0" text-right text-wrap>
               -
-            </ion-col>
+            </ion-col> -->
           </ion-row>
 
           <ion-row align-items-start>
@@ -277,12 +276,12 @@
             <ion-col *ngIf="pumpSummary.totalQty==0" class="Regular-sales-dash" text-right text-wrap>
               <b>-</b>
             </ion-col>
-            <ion-col *ngIf="pumpSummary.totalAmt!==0" class="Regular-sales-dash" text-right text-wrap>
+            <!-- <ion-col *ngIf="pumpSummary.totalAmt!==0" class="Regular-sales-dash" text-right text-wrap>
               <b>{{pumpSummary.totalAmt |Mcurrency}}</b>
             </ion-col>
             <ion-col *ngIf="pumpSummary.totalAmt==0" class="Regular-sales-dash" text-right text-wrap>
               <b>-</b>
-            </ion-col>
+            </ion-col> -->
           </ion-row>
 
 
@@ -328,9 +327,9 @@
             <ion-col  text-right>
               Ltr
             </ion-col>
-            <ion-col text-right>
+            <!-- <ion-col text-right>
               Rs
-            </ion-col>
+            </ion-col> -->
           </ion-row>
 
           <ion-row *ngFor="let over of OverallSummary;let index=index; let odd=odd; let even=even;" class="row"
@@ -344,12 +343,12 @@
             <ion-col *ngIf="over.qty==0" text-right text-wrap>
               -
             </ion-col>
-            <ion-col *ngIf="over.amount!==0" text-right text-wrap>
+            <!-- <ion-col *ngIf="over.amount!==0" text-right text-wrap>
               {{over.amount |Mcurrency}}
             </ion-col>
             <ion-col *ngIf="over.amount==0" text-right text-wrap>
               -
-            </ion-col>
+            </ion-col> -->
           </ion-row>
 
 
@@ -363,12 +362,12 @@
             <ion-col *ngIf="overall.sumQty==0" class="oilpurchase3" text-right text-wrap>
               <b>-</b>
             </ion-col>
-            <ion-col *ngIf="overall.sumAmount!==0" class="oilpurchase3" text-right text-wrap>
+            <!-- <ion-col *ngIf="overall.sumAmount!==0" class="oilpurchase3" text-right text-wrap>
               <b>{{overall.sumAmount |Mcurrency}}</b>
             </ion-col>
             <ion-col *ngIf="overall.sumAmount==0" class="oilpurchase3" text-right text-wrap>
               <b>-</b>
-            </ion-col>
+            </ion-col> -->
           </ion-row>
           <div text-center style="color: red;" *ngIf="overallshow">
             "Sorry No Overall records are Present"
@@ -417,9 +416,9 @@
             <ion-col class="Regular-sales-dash" text-right>
               Ltr
             </ion-col>
-            <ion-col class="Regular-sales-dash" text-right>
+            <!-- <ion-col class="Regular-sales-dash" text-right>
               Rs
-            </ion-col>
+            </ion-col> -->
           </ion-row>
 
           <ion-row *ngFor="let rDetail of RegularDetail;let index=index; let odd=odd; let even=even;" class="row"
@@ -433,12 +432,12 @@
             <ion-col *ngIf="rDetail.qty==0" text-right text-wrap>
               -
             </ion-col>
-            <ion-col *ngIf="rDetail.amount!==0" text-right text-wrap>
+            <!-- <ion-col *ngIf="rDetail.amount!==0" text-right text-wrap>
               {{rDetail.amount |Mcurrency}}
             </ion-col>
             <ion-col *ngIf="rDetail.amount==0" text-right text-wrap>
               -
-            </ion-col>
+            </ion-col> -->
           </ion-row>
 
 
@@ -452,12 +451,12 @@
             <ion-col *ngIf="regular.totalQty==0" class="Regular-sales-dash" text-right text-wrap>
               <b>-</b>
             </ion-col>
-            <ion-col *ngIf="regular.totalAmount!==0" class="Regular-sales-dash" text-right text-wrap>
+            <!-- <ion-col *ngIf="regular.totalAmount!==0" class="Regular-sales-dash" text-right text-wrap>
               <b>{{regular.totalAmount |Mcurrency}}</b>
             </ion-col>
             <ion-col *ngIf="regular.totalAmount==0" class="Regular-sales-dash" text-right text-wrap>
               <b>-</b>
-            </ion-col>
+            </ion-col> -->
           </ion-row>
           <div text-center style="color: red;" *ngIf="regularShow">
             "Sorry No Regular sales records are Present"
@@ -485,70 +484,70 @@
       <ion-card>
         <ion-card-content>
           <ion-row class="oilpurchase3"  align-items-start>
-            <ion-col col-2 style="margin-left:0px;">
+            <ion-col col-4 style="margin-left:0px;">
               Date
             </ion-col>
-            <ion-col col-3  text-right>
+            <ion-col col-4  text-right>
               Vehicles
             </ion-col>
-            <ion-col col-3 text-right>
+            <ion-col col-4 text-right>
               Ltr
             </ion-col>
-            <ion-col col-3  text-right>
+            <!-- <ion-col col-3  text-right>
               Rs
-            </ion-col>
+            </ion-col> -->
           </ion-row>
 
           <ion-row *ngFor="let credit of creditList;let index=index; let odd=odd; let even=even;" class="row" [ngClass]="{ oilpurchase2:odd,oilpurchase: even}">
-            <ion-col col-3 style="margin-left:0px;">
+            <ion-col col-4 style="margin-left:0px;">
               {{credit.forDate | dateTimeFormat}}
             </ion-col>
 
-            <ion-col col-2 *ngIf="credit.vehicle!==0" text-right text-wrap>
+            <ion-col col-4 *ngIf="credit.vehicle!==0" text-right text-wrap>
               {{credit.vehicle |Mcurrency}}
             </ion-col>
-            <ion-col col-2 *ngIf="credit.vehicle==0" text-right text-wrap>
+            <ion-col col-4 *ngIf="credit.vehicle==0" text-right text-wrap>
               -
             </ion-col>
 
-            <ion-col col-3 *ngIf="credit.qty!==0" text-right text-wrap>
+            <ion-col col-4 *ngIf="credit.qty!==0" text-right text-wrap>
               {{credit.qty |Mquantity}}
             </ion-col>
-            <ion-col col-3 *ngIf="credit.qty==0" text-right text-wrap>
+            <ion-col col-4 *ngIf="credit.qty==0" text-right text-wrap>
               -
             </ion-col>
 
-            <ion-col col-4 *ngIf="credit.amount!==0" text-right text-wrap>
+            <!-- <ion-col col-4 *ngIf="credit.amount!==0" text-right text-wrap>
               {{credit.amount |Mcurrency}}
             </ion-col>
             <ion-col col-4 *ngIf="credit.amount==0" text-right text-wrap>
               -
-            </ion-col>
+            </ion-col> -->
 
           </ion-row>
 
           <ion-row class="oilpurchase3" align-items-start>
-            <ion-col col-3  style="margin-left:0px;" text-wrap>
+            <ion-col col-4  style="margin-left:0px;" text-wrap>
               <b>Total</b>
             </ion-col>
-            <ion-col col-2 *ngIf="creditl.totalVehicle!==0" text-right text-wrap>
+            <ion-col col-4 *ngIf="creditl.totalVehicle!==0" text-right text-wrap>
                 <b>{{creditl.totalVehicle |Mcurrency}}</b>
               </ion-col>
-              <ion-col col-2 *ngIf="creditl.totalVehicle==0" text-right text-wrap>
+              <ion-col col-4 *ngIf="creditl.totalVehicle==0" text-right text-wrap>
                 <b>-</b>
               </ion-col>
-            <ion-col col-3 *ngIf="creditl.totalCSQty!==0"  text-right text-wrap>
+            <ion-col col-4 *ngIf="creditl.totalCSQty!==0"  text-right text-wrap>
               <b>{{creditl.totalCSQty |Mquantity}}</b>
             </ion-col>
-            <ion-col col-3 *ngIf="creditl.totalCSQty==0"  text-right text-wrap>
+            <ion-col col-4 *ngIf="creditl.totalCSQty==0"  text-right text-wrap>
               <b>-</b>
             </ion-col>
-            <ion-col col-4 *ngIf="creditl.totalCSAmount!==0"  text-right text-wrap>
+            <!-- <ion-col col-4 *ngIf="creditl.totalCSAmount!==0"  text-right text-wrap>
               <b>{{creditl.totalCSAmount |Mcurrency}}</b>
             </ion-col>
             <ion-col col-4 *ngIf="creditl.totalCSAmount==0"  text-right text-wrap>
               <b>-</b>
-            </ion-col>
+            </ion-col> -->
           </ion-row>
 
         </ion-card-content>
@@ -661,9 +660,9 @@
             <ion-col class="oilpurchase3" text-right>
               Ltr
             </ion-col>
-            <ion-col class="oilpurchase3" text-right>
+            <!-- <ion-col class="oilpurchase3" text-right>
               Rs
-            </ion-col>
+            </ion-col> -->
             
           </ion-row>
 
@@ -684,12 +683,12 @@
             <ion-col *ngIf="ldetail.sumQuantity==0" text-right text-wrap>
               -
             </ion-col>
-            <ion-col *ngIf="ldetail.sumAmount!==0" text-right text-wrap>
+            <!-- <ion-col *ngIf="ldetail.sumAmount!==0" text-right text-wrap>
               {{ldetail.sumAmount|Mcurrency}}
             </ion-col>
             <ion-col *ngIf="ldetail.sumAmount==0" text-right text-wrap>
               -
-            </ion-col>
+            </ion-col> -->
            
           </ion-row>
           <ion-row align-items-start *ngIf="loyalityHide" class="oilpurchase3">
@@ -708,12 +707,12 @@
             <ion-col *ngIf="loyality.totalsumQuantity==0" text-right text-wrap>
               <b>-</b>
             </ion-col>
-            <ion-col *ngIf="loyality.totalsumAmount!==0" text-right text-wrap>
+            <!-- <ion-col *ngIf="loyality.totalsumAmount!==0" text-right text-wrap>
               <b>{{loyality.totalsumAmount|Mcurrency}}</b>
             </ion-col>
             <ion-col *ngIf="loyality.totalsumAmount==0" text-right text-wrap>
               <b>-</b>
-            </ion-col>
+            </ion-col> -->
          
           </ion-row>
           <div text-center style="color: red;" *ngIf="loyalityShow">
@@ -747,28 +746,36 @@
     <div *ngIf="isGroupShown(10)">
       <ion-card>
 
-        <ion-card-content *ngIf="DailysaleStock.msg==null">
-
-          <ion-row *ngIf=regularHide align-items-start>
-            <ion-col class="Regular-sales-dash" style="margin-left:0px;">
+        <ion-card-content *ngIf="DailysaleStock.msg==null" class="forecast_container">
+          <ion-scroll  direction="xy" style="width: 500px; height: 260px">
+          <ion-row  *ngIf=regularHide align-items-start>
+            <!-- <ion-col col-12>
+              <ion-row> -->
+            <ion-col  class="Regular-sales-dash" style="margin-left:0px;">
             (Ltr)
             </ion-col>
-            <ion-col class="Regular-sales-dash" text-right>
-             HSD
+            
+            <ion-col  text-wrap  *ngFor="let item of DailysaleStock.products" class="Regular-sales-dash" text-right>
+             {{item.name}}
             </ion-col>
-            <ion-col class="Regular-sales-dash" text-right>
-              MS
-            </ion-col>
+            <ion-col  class="Regular-sales-dash" style="text-align:right;">
+              Total
+              </ion-col>
+          <!-- </ion-row>
+          </ion-col> -->
           </ion-row>
 
-          <ion-row class="Regulardash2">
-            <ion-col  style="margin-left:0px;" text-wrap>
-              Sales
+          <ion-row >
+            <ion-col class="Regulardash2"  style="margin-left:0px;" text-wrap>
+            <b>Sales</b>  
             </ion-col>
-            <ion-col *ngIf="DailysaleStock.currentHSDSales!==0" text-right text-wrap>
-              {{DailysaleStock.currentHSDSales | Mcurrency}}
+            <ion-col class="Regulardash2"  *ngFor="let item of DailysaleStock.sales" text-right>
+             <b>{{item.sales | Mcurrency}}</b> 
             </ion-col>
-            <ion-col *ngIf="DailysaleStock.currentHSDSales==0" text-right text-wrap>
+            <ion-col class="Regulardash2"  style="margin-left:0px;text-align:right;" text-right>
+              <b>{{salesTotal | Mcurrency}}</b>  
+              </ion-col>
+            <!-- <ion-col *ngIf="DailysaleStock.currentHSDSales==0" text-right text-wrap>
               -
             </ion-col>
             <ion-col *ngIf="DailysaleStock.currentMSSales!==0" text-right text-wrap>
@@ -776,80 +783,81 @@
             </ion-col>
             <ion-col *ngIf="DailysaleStock.currentMSSales==0" text-right text-wrap>
               -
-            </ion-col>
+            </ion-col> -->
           </ion-row>
 
-          <ion-row class="Regulardash2">
+          <ion-row class="forecast_container"  class="Regulardash2">
             <ion-col  style="margin-left:0px;" text-wrap>
              Cumulative Sales
             </ion-col>
-            <ion-col *ngIf="DailysaleStock.cumHsdSales!==0" text-right text-wrap>
-              {{DailysaleStock.cumHsdSales | Mcurrency}}
+            <ion-col *ngFor="let item of DailysaleStock.cumSales" text-right text-wrap>
+              {{item.cumSales | Mcurrency}}
             </ion-col>
-            <ion-col *ngIf="DailysaleStock.cumHsdSales==0" text-right text-wrap>
-              -
+            <ion-col text-right text-wrap>
+             {{CumTotal | Mcurrency}}
             </ion-col>
-            <ion-col *ngIf="DailysaleStock.cummsSales!==0" text-right text-wrap>
+             <!--<ion-col *ngIf="DailysaleStock.cummsSales!==0" text-right text-wrap>
               {{DailysaleStock.cummsSales | Mcurrency}}
             </ion-col>
             <ion-col *ngIf="DailysaleStock.cummsSales==0" text-right text-wrap>
               -
-            </ion-col>
+            </ion-col> -->
           </ion-row>
-          <ion-row class="Regulardash3">
+          <ion-row class="forecast_container"  class="Regulardash3">
             <ion-col style="margin-left:0px;" text-wrap>
              Stock 
             </ion-col>
-            <ion-col *ngIf="DailysaleStock.stockHSD!==0" text-right text-wrap>
-              {{DailysaleStock.stockHSD | Mcurrency}}
+            <ion-col *ngFor="let item of DailysaleStock.stock"  text-right text-wrap>
+              {{item.stock | Mcurrency}}
             </ion-col>
-            <ion-col *ngIf="DailysaleStock.stockHSD==0" text-right text-wrap>
-              -
+             <ion-col text-right text-wrap>
+               {{StockTotal | Mcurrency}}
             </ion-col>
-            <ion-col *ngIf="DailysaleStock.stockMS!==0" text-right text-wrap>
+           <!-- <ion-col *ngIf="DailysaleStock.stockMS!==0" text-right text-wrap>
               {{DailysaleStock.stockMS | Mcurrency}}
             </ion-col>
             <ion-col *ngIf="DailysaleStock.stockMS==0" text-right text-wrap>
               -
-            </ion-col>
+            </ion-col> -->
           </ion-row>
 
 
-          <ion-row class="Regulardash2"  *ngIf=regularHide align-items-start>
+          <ion-row class="forecast_container"  class="Regulardash2"  *ngIf=regularHide align-items-start>
             <ion-col style="margin-left:0px;" text-wrap>
-              <b>Avg Daily Sales</b>
+              Avg Daily Sales
             </ion-col>
-            <ion-col *ngIf="DailysaleStock.avgHSD!==0"  text-right text-wrap>
-              <b>{{DailysaleStock.avgHSD |Mcurrency}}</b>
+            <ion-col *ngFor="let item of DailysaleStock.avg"  text-right text-wrap>
+              {{item.avg |Mcurrency}}
             </ion-col>
-            <ion-col *ngIf="DailysaleStock.avgHSD==0"  text-right text-wrap>
-              <b>-</b>
+           <ion-col   text-right text-wrap>
+              {{AvgSales |Mcurrency}}
             </ion-col>
-            <ion-col *ngIf="DailysaleStock.avgMS!==0" text-right text-wrap>
+             <!-- <ion-col *ngIf="DailysaleStock.avgMS!==0" text-right text-wrap>
               <b>{{DailysaleStock.avgMS |Mcurrency}}</b>
             </ion-col>
             <ion-col *ngIf="DailysaleStock.avgMS==0" text-right text-wrap>
               <b>-</b>
-            </ion-col>
+            </ion-col> -->
           </ion-row>
 
-          <ion-row class="Regulardash3">
+          <ion-row class="forecast_container"  class="Regulardash3">
             <ion-col style="margin-left:0px;" text-wrap>
              <b>Projected Monthly Sales</b> 
             </ion-col>
-            <ion-col *ngIf="DailysaleStock.projMonthHSD!==0" text-right text-wrap>
-              {{DailysaleStock.projMonthHSD |Mcurrency}}
+            <ion-col *ngFor="let item of DailysaleStock.projMonth"  text-right text-wrap>
+            <b>{{item.projMonth |Mcurrency}}</b>  
             </ion-col>
-            <ion-col *ngIf="DailysaleStock.projMonthHSD==0" text-right text-wrap>
-              -
+            <ion-col  text-right text-wrap>
+            <b>{{projTotal|Mcurrency}}</b>  
             </ion-col>
-            <ion-col *ngIf="DailysaleStock.projMonthMS!==0" text-right text-wrap>
+             <!--<ion-col *ngIf="DailysaleStock.projMonthMS!==0" text-right text-wrap>
               {{DailysaleStock.projMonthMS |Mcurrency}}
             </ion-col>
             <ion-col *ngIf="DailysaleStock.projMonthMS==0" text-right text-wrap>
               -
-            </ion-col>
+            </ion-col> -->
           </ion-row>
+        </ion-scroll>
 
           <div text-center style="color: red;" *ngIf="regularShow">
             "Sorry No Regular sales records are Present"
@@ -866,112 +874,7 @@
     </div>
   </div>
 
-  <!-- Paymodewise Sales -->
-  <!-- <div text-wrap (click)="toggleGroup(6)" [ngClass]="{active: isGroupShown(6)}">
-    <div class="info-box bg-success">
-      <div class="info-box-content">
-        <ion-row class="mar">
-          <span class="info-box-text">Paymodewise Received <br>(Last 7 Days)</span>
-        </ion-row>
-      </div>
-      <div class="info-box-content" style="text-align:right;">
-        <span class="info-box-number">
-          <ion-icon item-right [name]="isGroupShown(6) ? 'arrow-dropdown' : 'arrow-dropright'" style="padding-left: 10px;"></ion-icon>
-        </span>
-      </div>
-    </div> -->
-    <!-- <div *ngIf="isGroupShown(6)">
-      <ion-card>
-        <ion-card-content>
-          <ion-row align-items-start>
-            <ion-col class="head-table Regulardash2">
-              <ion-item class="Regulardash2" style="color:red;">
-                <ion-label slack style="padding-left: 10px;color:red;">Select Paymode</ion-label>
-                <ion-select [(ngModel)]="paymodeId" class="form-control" #paymodeid (ionChange)="selectPaymode(paymodeid.value)">
-                  <ion-option value=0 selected>All</ion-option>
-                  <ion-option *ngFor="let prod of selectPaymodeList;let i = index" [selected]="i===0" [value]="prod.id">
-                    &nbsp;&nbsp; {{prod.name}}
-                  </ion-option>
-                </ion-select>
-              </ion-item>
-            </ion-col>
-          </ion-row>
-          <ion-row align-items-start class="Regular-sales-dash">
-            <ion-col style="margin-left:0px;">
-              Date
-            </ion-col>
-            <ion-col *ngIf="activeCS==1" text-right>
-              Credit
-            </ion-col>
 
-            <ion-col text-right>
-              Regular
-            </ion-col>
-            <ion-col *ngIf="activeCS!==0 && activeLS!==0" text-right>
-              Total
-            </ion-col>
-          </ion-row>
-
-          <ion-row align-items-start *ngFor="let pdetail of PaymodeList;let index=index; let odd=odd; let even=even;"
-            class="row" [ngClass]="{ Regulardash2:odd,Regulardash3:even}">
-            <ion-col style="margin-left:0px;" text-wrap>
-              {{pdetail.date |  dateTimeFormat}}
-            </ion-col>
-            <ion-col *ngIf="pdetail.creditAmount!==0 && activeCS==1" text-right text-wrap>
-              {{pdetail.creditAmount | Mcurrency:'2'}}
-            </ion-col>
-            <ion-col *ngIf="pdetail.creditAmount==0 && activeCS==1" text-right text-wrap>
-              -
-            </ion-col>
-           
-            <ion-col *ngIf="pdetail.regularAmount!==0" text-right text-wrap>
-              {{pdetail.regularAmount | Mcurrency:'2'}}
-            </ion-col>
-            <ion-col *ngIf="pdetail.regularAmount==0" text-right text-wrap>
-              -
-            </ion-col>
-            <ion-col *ngIf="pdetail.total!==0 && activeCS!==0 && activeLS!==0" text-right text-wrap>
-              {{pdetail.total | Mcurrency:'2'}}
-            </ion-col>
-            <ion-col *ngIf="pdetail.total==0 && activeCS!==0 && activeLS!==0" text-right text-wrap>
-              -
-            </ion-col>
-          </ion-row>
-
-          <ion-row align-items-start class="Regular-sales-dash">
-            <ion-col style="margin-left:0px;" text-wrap>
-              <b>Total</b>
-            </ion-col>
-            <ion-col *ngIf="paymode.totalCreditAmount!==0  && activeCS==1" text-right text-wrap>
-              <b> {{paymode.totalCreditAmount |Mcurrency:'2'}}</b>
-            </ion-col>
-            <ion-col *ngIf="paymode.totalCreditAmount==0  && activeCS==1" text-right text-wrap>
-              <b>-</b>
-            </ion-col>
-            <ion-col *ngIf="paymode.totalRegularAmount!==0" text-right text-wrap>
-              <b> {{paymode.totalRegularAmount |Mcurrency:'2'}}</b>
-            </ion-col>
-            <ion-col *ngIf="paymode.totalRegularAmount==0" text-right text-wrap>
-              <b>-</b>
-            </ion-col>
-            <ion-col *ngIf="paymode.totalAmount!==0 && activeCS!==0 && activeLS!==0" text-right text-wrap>
-              <b> {{paymode.totalAmount |Mcurrency:'2'}}</b>
-            </ion-col>
-            <ion-col *ngIf="paymode.totalAmount==0 && activeCS!==0 && activeLS!==0" text-right text-wrap>
-              <b>-</b>
-            </ion-col>
-          </ion-row>
-
-          <ion-row text-center>
-            <ion-col class="Regulardash2" style="margin-left:0px;">
-              <span style="color:red;">*</span>All Amount in<b> Lacs</b>
-            </ion-col>
-          </ion-row>
-
-        </ion-card-content>
-      </ion-card>
-    </div> -->
-  <!-- </div> -->
 
 </ion-content>
 

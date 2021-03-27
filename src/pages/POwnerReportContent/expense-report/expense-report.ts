@@ -40,6 +40,8 @@ export class ExpenseReportPage {
   datewise: string = 'd';
   categoryShow: boolean = false;
   showRecord: boolean = false;
+  urldate: string;
+  urlcategory: string;
   constructor(public navCtrl: NavController,
     public navParams: NavParams,
     public popoverCtrl: PopoverController,
@@ -229,10 +231,14 @@ export class ExpenseReportPage {
     this.endDate = this.datePipe.transform(this.endDate, "yyyy-MM-dd");
     this.startDate = this.datePipe.transform(this.startDate, "yyyy-MM-dd");
     this.tDate = this.startDate + ',' + this.endDate;//together Date
-    this.reportData.getExpense(this.pumpId, this.tDate).subscribe(res => {
+    this.reportData.getExpense(this.pumpId, this.tDate).subscribe((res1:any) => {
       loading.dismiss();
+      let res=res1.dailyExpense;
+      this.urlcategory=res1.categoryLink;
+      this.urldate=res1.dateWiseLink;
       console.log(res)
      this.reportsexpense=res;
+     this.expenseReport=res;
       this.count = 0;
       var k = 0;
       for (var i = 0; i < res.length; i++) {
@@ -264,9 +270,11 @@ export class ExpenseReportPage {
     this.endDate = this.datePipe.transform(this.endDate, "yyyy-MM-dd");
     this.startDate = this.datePipe.transform(this.startDate, "yyyy-MM-dd");
     this.tDate = this.startDate + ',' + this.endDate;//together Date
-    this.reportData.getExpense(this.pumpId, this.tDate).subscribe(res => {
+    this.reportData.getExpense(this.pumpId, this.tDate).subscribe((res1:any) => {
       loading.dismiss();
-      console.log(res)
+      let res=res1.dailyExpense;
+      this.urlcategory=res1.categoryLink;
+      this.urldate=res1.dateWiseLink;
      this.expenseReport=res;
       this.count = 0;
       var k = 0;
@@ -361,4 +369,14 @@ export class ExpenseReportPage {
     console.log(this.datewise);
   }
 
+  DownloadPDFDate(){
+ 
+    window.open(this.urldate,"_system");
+   
+}
+DownloadPDFCategory(){
+ 
+  window.open(this.urlcategory,"_system");
+ 
+}
 }

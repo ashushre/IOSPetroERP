@@ -5,7 +5,7 @@ import { Storage } from '@ionic/storage';
 import { DsmHomePage } from '../dsm-home/dsm-home';
 import { FormControl } from '@angular/forms';
 import { FormGroup, Validators } from '@angular/forms';
-import { Camera, CameraOptions } from '@ionic-native/camera';
+// import { Camera, CameraOptions } from '@ionic-native/camera';
 import { FileTransfer, FileTransferObject, FileUploadOptions } from '@ionic-native/file-transfer';
 import { CashSale } from '../../../app/cash.sale';
 import { Driver } from '../../../app/driver';
@@ -43,7 +43,7 @@ export class CashSalePage {
     public platform: Platform,
     public basicData: BasicDataProvider,
     public salesData: SalesDataProvider,
-    private camera: Camera,
+  //  private camera: Camera,
     public navCtrl: NavController,
     public appCtrl: App,
     public brScanner: BarcodeScanner,
@@ -520,21 +520,21 @@ console.log("1")
   }
 
   takePhoto() {
-    const options: CameraOptions = {
-      quality: 100,
-      targetHeight: 150,
-      targetWidth: 200,
-      destinationType: this.camera.DestinationType.DATA_URL,
-      encodingType: this.camera.EncodingType.JPEG,
-      mediaType: this.camera.MediaType.PICTURE
-    }
-    this.camera.getPicture(options).then((imageData) => {
+    // const options: CameraOptions = {
+    //   quality: 100,
+    //   targetHeight: 150,
+    //   targetWidth: 200,
+    //   destinationType: this.camera.DestinationType.DATA_URL,
+    //   encodingType: this.camera.EncodingType.JPEG,
+    //   mediaType: this.camera.MediaType.PICTURE
+    // }
+    // this.camera.getPicture(options).then((imageData) => {
 
-      this.dsm.myphoto = 'data:image/jpeg;base64,' + imageData;
+    //   this.dsm.myphoto = 'data:image/jpeg;base64,' + imageData;
 
-    }, (err) => {
-      // Handle error
-    });
+    // }, (err) => {
+    //   // Handle error
+    // });
   }
 
   uploadImage() {

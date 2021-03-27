@@ -33,9 +33,9 @@ export class DsmManualPage {
 
     this.imgLink = this.basicData.photoURl + "/storage/help/dsm";
     this.dsmData.getdsmManual().subscribe(res=>{
-      console.log(res);
-      this.PImage=res;
-      this.total=this.PImage.length-1;
+      console.log(res,this.imgLink);
+      // this.PImage=res;
+      // this.total=this.PImage.length-1;
     })
   }
 

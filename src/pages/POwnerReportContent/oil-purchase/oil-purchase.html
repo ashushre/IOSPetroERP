@@ -91,9 +91,9 @@
     <ion-col text-right>
       Ltr
     </ion-col>
-    <ion-col  text-right>
+    <!-- <ion-col  text-right>
       Rs
-    </ion-col>
+    </ion-col> -->
   </ion-row>
   <ion-row *ngFor="let oil of FuelDetail;let index=index; let odd=odd; let even=even;" class="row" [ngClass]="{ contenttable: odd, contenttable2: even}">
     <ion-col style="margin-left:0px;">
@@ -105,12 +105,12 @@
     <ion-col *ngIf="oil.quantity==0" text-right>
       -
     </ion-col>
-    <ion-col *ngIf="oil.amount!==0" text-right>
+    <!-- <ion-col *ngIf="oil.amount!==0" text-right>
       {{oil.amount |Mcurrency}}
     </ion-col>
     <ion-col *ngIf="oil.amount==0" text-right>
       -
-    </ion-col>
+    </ion-col> -->
   </ion-row>
 
   <ion-row align-items-start>
@@ -123,13 +123,17 @@
     <ion-col *ngIf="FuelSoldList.totalQty==0" class="tab-bg-assertive" text-right>
       <b>-</b>
     </ion-col>
-    <ion-col *ngIf="FuelSoldList.totalAmt!==0" class="tab-bg-assertive" text-right>
+    <!-- <ion-col *ngIf="FuelSoldList.totalAmt!==0" class="tab-bg-assertive" text-right>
       <b>{{FuelSoldList.totalAmt |Mcurrency}}</b>
     </ion-col>
     <ion-col *ngIf="FuelSoldList.totalAmt==0" class="tab-bg-assertive" text-right>
       <b>-</b>
-    </ion-col>
+    </ion-col> -->
   </ion-row>
-
+  <div *ngIf="view" class="text-center" style="text-align:center;">
+    <button ion-button full color="primary"  (click)="DownloadPDF()">
+       &nbsp;Download  PDF&nbsp; 
+        </button>
+     </div>
 
 </ion-content>

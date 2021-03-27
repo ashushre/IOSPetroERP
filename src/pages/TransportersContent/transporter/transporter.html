@@ -6,7 +6,7 @@
         <ion-icon ios="ios-home" style="font-size: 1.7em;color: white;" md="md-home" (click)="home()"></ion-icon>
       </ion-col>
       <ion-col col-10>
-        <ion-title text-capitalize class="centerali">{{trans.name}} [{{trans.title}}]</ion-title>
+        <ion-title text-capitalize class="centerali">{{trans.name}} [Cr Customer]</ion-title>
       </ion-col>
       <ion-col col-1>
         <button ion-button  float-right menuToggle icon-only style="display: block !important;"  >
@@ -423,6 +423,70 @@
       </ion-card>
     </div>
   </div>
+
+    <!-- Pending Requests -->
+    <div text-wrap (click)="toggleGroup(6)" [ngClass]="{active: isGroupShown(6)}">
+      <div class="info-box bg-success">
+        <div class="info-box-content">
+          <ion-row class="mar">
+            <span class="info-box-text">Outstanding Credit</span>
+          </ion-row>
+        </div>
+        <div class="info-box-content" style="text-align:right;">
+          <span class="info-box-number">
+            <ion-icon item-right [name]="isGroupShown(6) ? 'arrow-dropdown' : 'arrow-dropright'" style="padding-left: 10px;"></ion-icon>
+          </span>
+        </div>
+      </div>
+      <div *ngIf="isGroupShown(6)">
+        <ion-card>
+          <ion-card-content>
+  
+            <ion-row class="pumpwiselimit2" align-items-start>
+              <ion-col  style="margin-left:0px;">
+                <b>Pump</b>
+              </ion-col>
+              <ion-col  >
+                <b>Phone</b>
+              </ion-col>
+              <ion-col  text-right>
+                <b>Rs.</b>
+              </ion-col>
+  
+            </ion-row>
+  
+            <ion-row *ngFor="let item of Outstanding;" class="pumpwiselimit3" align-items-start>
+              <ion-col col-4  style="margin-left:0px;">
+                {{item.name}}
+              </ion-col>
+              <ion-col col-4  >
+                {{item.oMobileNo1}}
+              </ion-col>
+              <ion-col col-4 text-right *ngIf="item.outstandingRs!==0">
+              {{item.outstandingRs |Mcurrency}}
+              </ion-col>
+              <ion-col col-4 *ngIf="item.outstandingRs==0" text-right>
+               -
+              </ion-col>
+  
+            </ion-row>
+  
+            <ion-row class="pumpwiselimit2" align-items-start>
+              <ion-col col-4 style="margin-left:0px;">
+                <b>Total</b>
+              </ion-col>
+              <ion-col col-4 >
+                <b></b>
+              </ion-col>
+              <ion-col col-4 text-right>
+                <b>{{totalOutstanding |Mcurrency}}</b>
+              </ion-col>
+  
+            </ion-row>
+          </ion-card-content>
+        </ion-card>
+      </div>
+    </div>
 
 </ion-content>
 

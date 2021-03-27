@@ -9,7 +9,6 @@ import { BasicDataProvider } from '../../../providers/basic-data/basic-data';
 import { SalesDataProvider } from '../../../providers/sales-data/sales-data';
 import { TransDataProvider } from '../../../providers/trans-data/trans-data';
 import { BarcodeScanner, BarcodeScannerOptions } from '@ionic-native/barcode-scanner';
-import { isDefaultChangeDetectionStrategy } from '@angular/core/src/change_detection/constants';
 @IonicPage()
 @Component({
   selector: 'page-credit-sale',
@@ -44,6 +43,7 @@ export class CreditSalePage {
   Blanket: any;
   public query = '';
   CashActual: any;
+  public isReadonly:boolean=true;
 
   constructor(public navCtrl: NavController,
     public navParams: NavParams,
@@ -63,6 +63,8 @@ export class CreditSalePage {
           Validators.compose([Validators.required,Validators.maxLength(10),  
           Validators.pattern('[0-9]*')])),
           fuelActual: new FormControl({ value: '' },
+          Validators.compose([Validators.required])),
+          amount: new FormControl({ value: '' },
           Validators.compose([Validators.required])),
       });
       this.user1 = new FormGroup
@@ -162,6 +164,36 @@ export class CreditSalePage {
             }
   }
 
+  onChangeAmount(dip1) {
+    console.log(this.crequest.fuelActual,this.crequest.amount,this.currentRate)
+    this.crequest.fuelActual = this.crequest.amount / this.currentRate;
+    if (this.crequest.fuelActual > this.crequest.fuelRequested)
+     {
+      this.basicData.sendErrorNotification("Fuel is greater than Requested");
+      this.crequest.fuelActual = null;
+      this.crequest.amount = null;
+    }
+    else {
+      this.toFix = this.crequest.fuelActual;
+      this.crequest.fuelActual = this.toFix.toFixed(2);
+    }
+
+  }
+
+  onChangeTime(dip1) {
+    console.log(this.crequest.fuelActual,parseFloat(dip1),this.currentRate)
+    if (parseFloat(dip1) >this.crequest.fuelRequested) {
+      this.basicData.sendErrorNotification("Fuel is greater than Requested");
+      this.crequest.fuelActual = null;
+      this.crequest.amount = null;
+    }
+    else {
+      this.crequest.amount = this.crequest.fuelActual * this.currentRate;
+      this.toFix = this.crequest.amount;
+      this.crequest.amount = this.toFix.toFixed(2);
+    }
+
+  }
   select(regNo) {
 
     let loading = this.loadingCtrl.create({

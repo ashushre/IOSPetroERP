@@ -101,6 +101,13 @@ url:any;
     projMonthMS;
     projMonthHSD;
   link: any;
+  fuelCreditSalesLink: any;
+  cashCreditSalesLink: any;
+  totalCreditSalesLink: any;
+  cumSales: any;
+  stock: any;
+  avg: any;
+  projMonth: any;
     constructor() {
     }
 }

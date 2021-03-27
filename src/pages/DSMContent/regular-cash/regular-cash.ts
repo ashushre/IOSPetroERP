@@ -212,6 +212,7 @@ export class RegularCashPage {
       this.dsm.loyality = this.dsm.totalSales.totalLoyaltyAmount;
       this.dsm.managerId = this.dsm.totalSales.managerId;
       this.dsm.totalTesting=this.dsm.totalSales.totalTesting;
+      this.dsm.cashDeposited=this.dsm.totalSales.cashDeposited;
       console.log(res,this.dsm.totalSales.totalTesting)
       var totalBalance=this.dsm.total;
       this.dsm.totalBalance = totalBalance - (this.dsm.credit+this.dsm.totalSales.totalTesting)

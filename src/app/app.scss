@@ -104,11 +104,13 @@ p {
 
 .interntImg {
     background-image: url(../assets/imgs/Nointernet.png);
-    background-size: cover;
+    background-size: contain;
     top: 0;
     left: 0;
     bottom: 0;
     right: 0;
+    width: 110%;
+    height: auto;
     position: absolute;
     z-index: 0;
 }

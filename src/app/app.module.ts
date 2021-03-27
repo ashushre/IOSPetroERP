@@ -19,7 +19,7 @@ import { ReportsProvider } from '../providers/reports/reports';
 import { DatePipe } from '@angular/common';
 import { Network } from '../../node_modules/@ionic-native/network';
 import { SmsDataProvider } from '../providers/sms-data/sms-data';
-import { Camera} from '@ionic-native/camera';
+// import { Camera} from '@ionic-native/camera';
 import { FileTransfer} from '@ionic-native/file-transfer';
 import { ReactiveFormsModule } from '@angular/forms';
 import { TransporterReportProvider } from '../providers/transporter-report/transporter-report';
@@ -101,7 +101,8 @@ import {FCM} from '@ionic-native/fcm';
     { provide: ErrorHandler, useClass: IonicErrorHandler },
     ReportsProvider,
     SmsDataProvider,
-    Camera,FileTransfer,
+    //Camera,
+    FileTransfer,
 
     TransporterReportProvider,
     DsmReportsProvider,

@@ -54,6 +54,11 @@ export class CreditGivenCvfPage {
   showRecord: boolean = false;
   selectedTransporter: any;
   categories: any;
+  urlcategory: any;
+  urldate: any;
+  fuelCreditSalesLink: any;
+  totalCreditSalesLink: any;
+  cashCreditSalesLink: any;
   constructor(public navCtrl: NavController,
     public navParams: NavParams,
     public platform: Platform,
@@ -242,6 +247,9 @@ export class CreditGivenCvfPage {
       this.cashCreditSales = res.cashCreditSales;
       this.fuelCreditSales = res.fuelCreditSales;
       this.totalCreditSales = res.totalCreditSales;
+      this.fuelCreditSalesLink=res.fuelCreditSalesLink;
+      this.cashCreditSalesLink=res.cashCreditSalesLink;
+      this.totalCreditSalesLink=res.totalCreditSalesLink;
       if (this.cashCreditSales.length == 0) {
         this.cashEmpty = true;
         this.cashView = false;
@@ -275,5 +283,16 @@ export class CreditGivenCvfPage {
   // menuClick() {
   //   this.basicData.checkPumpCount();
   // }
+  DownloadPDFTotal(){
+    window.open(this.totalCreditSalesLink,"_system");
 
+  }
+  DownloadPDFFuel(){
+  window.open(this.fuelCreditSalesLink,"_system");
+    
+  }
+  DownloadPDFCash(){
+  window.open(this.cashCreditSalesLink,"_system");
+    
+  }
 }

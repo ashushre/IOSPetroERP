@@ -140,6 +140,7 @@ else
     }, err => {
       console.log(err);
     });
+    
     this.storage.get('username').then((val) => {
       this.dsmVariables.username = val;
     }, err => {

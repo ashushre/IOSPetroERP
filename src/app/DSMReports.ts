@@ -81,6 +81,7 @@ export class DSMReports {
 
     showEmpty: boolean;
     cb_vehicelchanged: boolean = false;totalLoyaltySale: any;
+  cashDeposited: void;
 ;
     hideTakePhotoButton: boolean = false;
     paymodeList: any[] = [];

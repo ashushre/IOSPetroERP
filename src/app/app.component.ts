@@ -339,6 +339,7 @@ export class MyApp {
      // this.keyboard.disableScroll(true);
        if (this.platform.is('ios')) {
         this.appVersion.getVersionNumber().then(version => {
+          console.log(version)
           this.versionNumber = version;
           //this.basicData.sendErrorNotification(this.versionNumber);
 
@@ -346,14 +347,19 @@ export class MyApp {
      
         
         this.basicData.versionCheckIOS().subscribe(res => {
-          console.log("Version", res.versionName);
           this.previousversionNumber=res.versionName;
+       let verion1='1.2.2';
+       console.log("Version", res.versionName,this.versionNumber,verion1==this.previousversionNumber,);
+
           if(this.versionNumber==this.previousversionNumber)
+        //  if(verion1==this.previousversionNumber)
           {
+          // this.rootPage = LoginPage;
+
           }
             else{
-              this.rootPage="TdriverAddPage"
-              
+            this.rootPage="TdriverAddPage"
+           //   alert('Came')
   // let alert = this.alertCtrl.create({
   //   message: "Please Update the PetroMapp",
   //     enableBackdropDismiss: false,
@@ -382,7 +388,7 @@ export class MyApp {
 
         }
       });
- } 
+ //} 
  
   
 
@@ -577,7 +583,7 @@ export class MyApp {
       
 
 
-//}
+ }
   }, 
   err => {
       console.log(err);

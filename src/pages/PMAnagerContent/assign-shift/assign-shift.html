@@ -1,0 +1,154 @@
+<ion-header>
+     
+  <ion-navbar hideBackButton>
+    <ion-row>
+      <ion-col col-1>
+        <ion-icon ios="ios-home" style="font-size: 1.7em;color: white;" md="md-home" (click)="home()"></ion-icon>
+      </ion-col>
+      <ion-col col-10>
+        <!-- <ion-title class="centerali">{{name}} [Manager]</ion-title> -->
+        <ion-title class="centerali">Assign Shift</ion-title>
+
+      </ion-col>
+      <ion-col col-1>
+        <button ion-button float-right menuToggle icon-only style="display: block !important;"  >
+          <ion-icon name='menu'></ion-icon>
+        </button>
+      </ion-col>
+    </ion-row>
+  </ion-navbar>
+    
+</ion-header>
+<ion-content padding="true" overflow-scroll="false" has-bouncing="false">
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+
+  <!-- Requests -->
+<div *ngIf="viewMachine">
+    <div *ngFor="let item of machineList" text-wrap (click)="toggleGroup(1)" [ngClass]="{active: isGroupShown(1)}">
+    <div class="info-box bg-primary" (click)="ViewData(item)">
+      <div class="info-box-content">
+        <ion-row class="mar" >
+          <span class="info-box-text">{{item.name }}</span>
+        </ion-row>
+      </div>
+      <div class="info-box-content" style="text-align:right;">
+        <span class="info-box-number">
+          <ion-icon item-right [name]="isGroupShown(1) ? 'arrow-dropdown' : 'arrow-dropright'" style="padding-left: 10px;"></ion-icon>
+        </span>
+      </div>
+    </div>
+    </div>
+  </div>
+
+<div *ngIf="viewNozzle">
+  <ion-card   *ngFor="let item of nozzleList.nozzles;"
+      style="margin: 11px 5px !important;border: 1px solid #387ef5;">
+      <ion-card-header text-center class="header-trans"
+        style="background-color: rgba(125, 173, 255, 0.74);color: #000;">
+      {{item.name}}
+      </ion-card-header>
+      <ion-card-content style="padding: 10px 10px;">
+        <ion-row style="padding-bottom: 5px;color: red;">
+          <ion-col col-5 style="padding: 1px 0px;">
+           Working
+          </ion-col>
+          <ion-col col-1>
+            :
+          </ion-col>
+          <ion-col col-6 style="padding: 1px 0px;">
+         {{item.Working_DSM_name}}
+          </ion-col>
+        </ion-row>
+        <ion-row style="background-color: #cecece;color:#000;">
+          <ion-col col-5 style="padding: 1px 0px;">
+            Start Reading
+          </ion-col>
+          <ion-col col-1>
+            :
+          </ion-col>
+          <ion-col col-6 style="padding: 1px 2px;" text-right>
+           {{item.StartReading}}
+          </ion-col>
+        </ion-row>
+
+        
+        <ion-row style="background-color: #cecece;color:#000;font-size: 1.3rem;">
+          <ion-col col-5 >
+          Assigned
+          </ion-col>
+          <ion-col col-1>
+            :
+          </ion-col>
+          <ion-col text-right>
+            {{item.Assign_DSM_Name}}
+
+          </ion-col>
+        </ion-row>
+
+
+        <ion-row style="background-color: #cecece;color:#000;font-size: 1.3rem;">
+          <ion-col col-5>
+           Pick a Saleman
+          </ion-col>
+          <ion-col col-1>
+            :
+          </ion-col>
+          <ion-col text-right>              
+            <ion-select [(ngModel)]="item.dsm " class="form-control" #reqFuel1>
+            <ion-option *ngFor="let obj of DsmList;" [value]="obj.id">
+             {{obj.name}}
+            </ion-option>
+          
+          </ion-select>
+          </ion-col>
+        </ion-row>
+
+
+      </ion-card-content>
+    </ion-card>
+  </div>
+  <ion-row *ngIf="viewNozzle">
+    <ion-col col-5>
+      <button ion-button color="positive" full (click)="cancel()" class="footer-btn">
+        Cancel
+      </button>
+    </ion-col>
+    <ion-col col-1>
+
+    </ion-col>
+    <ion-col col-5>
+      <button ion-button color="positive" full (click)="reportRequest()" class="footer-btn">
+        Submit
+      </button>
+    </ion-col>
+  </ion-row>
+</ion-content>
+
+<ion-footer>
+
+  <!-- <ion-row *ngIf="activeCS==1">
+    <ion-col col-6 style="padding: 0;">
+      <button ion-button full (click)="addRequest()" class="footer-btn">
+        Cash Dispense
+      </button>
+    </ion-col>
+    <ion-col col-6 style="padding: 0;">
+      <button ion-button color="positive" full (click)="reportRequest()" class="footer-btn">
+        Reports
+      </button>
+    </ion-col>
+  </ion-row> -->
+  
+
+<!-- 
+  <ion-row *ngIf="activeCS==0">
+    <ion-col col-12 style="padding: 0;">
+      <button ion-button color="positive" full (click)="reportRequest()" class="footer-btn">
+        Reports
+      </button>
+    </ion-col>
+  </ion-row> -->
+
+</ion-footer>

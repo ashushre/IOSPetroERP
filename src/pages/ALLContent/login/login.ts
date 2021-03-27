@@ -11,6 +11,7 @@ import { PManagerHomePage } from "../../PMAnagerContent/p-manager-home/p-manager
 import { DsmHomePage } from "../../DSMContent/dsm-home/dsm-home";
 import { TransporterPage } from "../../TransportersContent/transporter/transporter";
 import {FCM} from '@ionic-native/fcm';
+import { LoyaltyDashboardPage } from "../../LoyaltyContent/loyalty-dashboard/loyalty-dashboard";
 
 
 @Component({
@@ -225,6 +226,9 @@ export class LoginPage {
                 case '22':
                  this.navCtrl.setRoot(TransporterPage);
                   break;
+                  case '41':
+          this.navCtrl.setRoot(LoyaltyDashboardPage);
+                     break;
               }
             }
           }

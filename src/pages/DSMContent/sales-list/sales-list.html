@@ -67,6 +67,8 @@
         <h6 text-wrap> {{pumps.forDate | dateTimeFormat :'T'}}</h6>
         <!-- <h6 text-wrap>{{pumps.forDate |   dateTimeFormat}}, {{pumps.forDate | date:"hh:mm:a"}}</h6> -->
         <h6>{{pumps.productName}}  : {{pumps.fuelActual |Mquantity :'2'}} Ltr</h6>
+ <h6>Fuel : Rs {{pumps.saleAmount |Mcurrency}}</h6>
+
         <h6 *ngIf="pumps.cashActual!=NaN">Cash Given : Rs {{pumps.cashActual |Mcurrency }}</h6>
        
       </ion-item>
@@ -92,6 +94,7 @@
         <h6 text-wrap> MPD Invoice No : {{pumps.invoiceNo}}</h6>
         <h6 text-wrap> {{pumps.machineName}} {{pumps.nozzleName}} </h6>
         <h6 text-wrap> {{pumps.forDate | dateTimeFormat :'T'}}</h6>
+ <h6>Fuel : Rs {{pumps.saleAmount |Mcurrency}}</h6>
     
         <!-- <h6 text-wrap>dateFormat {{pumps.forDate |   dateTimeFormat}}, {{pumps.forDate | date:"hh:mm:a"}}</h6> -->
         <h6>{{pumps.productName}} : {{pumps.quantity |Mquantity :'2'}} Ltr </h6>
