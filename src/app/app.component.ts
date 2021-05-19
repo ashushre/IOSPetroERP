@@ -12,7 +12,7 @@ import { Storage } from '@ionic/storage';
 import { Network } from '@ionic-native/network';
 import { BasicDataProvider } from '../providers/basic-data/basic-data';
 import { AppVersion } from '@ionic-native/app-version';
-import { FCM } from '@ionic-native/fcm';
+// import { FCM } from '@ionic-native/fcm';
 //import { InAppBrowser } from '@ionic-native/in-app-browser';
 export interface MenuItem {
   title: string;
@@ -66,7 +66,7 @@ export class MyApp {
     public platform: Platform,
     public statusBar: StatusBar,
     public appCtrl: App,
-    public fcm:FCM,
+    // public fcm:FCM,
     //private iab: InAppBrowser,
     public basicData: BasicDataProvider,
     public alertCtrl: AlertController,
@@ -414,17 +414,17 @@ export class MyApp {
               }, error => {
          this.basicData.sendErrorNotification(error);
        })
-       this.fcm.onNotification().subscribe(data => {
-        console.log(data);
-        if (data.wasTapped) {
+      //  this.fcm.onNotification().subscribe(data => {
+      //   console.log(data);
+      //   if (data.wasTapped) {
        
-          this.storage2.set('notdata', JSON.stringify(data.message));
-          this.appCtrl.getRootNav().setRoot("TdriverDeactivatePage");
-        } else {
-          console.log('Received in foreground');
+      //     this.storage2.set('notdata', JSON.stringify(data.message));
+      //     this.appCtrl.getRootNav().setRoot("TdriverDeactivatePage");
+      //   } else {
+      //     console.log('Received in foreground');
 
-        }
-      });
+      //   }
+      // });
  } 
  
   

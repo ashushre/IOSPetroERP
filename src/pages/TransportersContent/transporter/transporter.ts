@@ -8,7 +8,7 @@ import { SalesDataProvider } from '../../../providers/sales-data/sales-data';
 import { BasicDataProvider } from '../../../providers/basic-data/basic-data';
 import { TransDataProvider } from '../../../providers/trans-data/trans-data';
 import { Network } from '@ionic-native/network';
-import { FCM } from '@ionic-native/fcm';
+// import { FCM } from '@ionic-native/fcm';
 import { CreditDataProvider } from '../../../providers/credit-data/credit-data';
 
 
@@ -45,7 +45,7 @@ export class TransporterPage {
     public storage: Storage, public alertCtrl: AlertController,
     public platform: Platform,
     public appCtrl: App,
-    public fcm:FCM,
+    // public fcm:FCM,
     public transReport: TransporterReportProvider,
     public saleData: SalesDataProvider,
     public network: Network,

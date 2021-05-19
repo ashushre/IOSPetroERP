@@ -5,7 +5,7 @@ import { Storage } from "@ionic/storage";
 import { SalesDataProvider } from '../../../providers/sales-data/sales-data';
 import { ReportsProvider } from '../../../providers/reports/reports';
 import { BasicDataProvider } from '../../../providers/basic-data/basic-data';
-import { FCM } from '@ionic-native/fcm';
+// import { FCM } from '@ionic-native/fcm';
 import { CreditDataProvider } from '../../../providers/credit-data/credit-data';
 @Component({
   selector: "page-p-owner-home",
@@ -78,7 +78,7 @@ export class POwnerHomePage {
     public navCtrl: NavController,
     public appCtrl: App,
     public creditdata:CreditDataProvider,
-    public fcm: FCM,
+    // public fcm: FCM,
     public basicData: BasicDataProvider,
     public alertCtrl: AlertController, ) {
     let backAction = this.platform.registerBackButtonAction(() => {
@@ -116,13 +116,13 @@ export class POwnerHomePage {
     this.paymodeId = 0;
     platform.ready()
       .then(() => {
-        this.fcm.getToken().then(token => {
-          this.token = token;
-         // this.basicData.sendSuccessNotification(token)
-        }, err => {
-          this.token1 = err;
-          //this.basicData.sendErrorNotification(err)
-        })
+        // this.fcm.getToken().then(token => {
+        //   this.token = token;
+        //  // this.basicData.sendSuccessNotification(token)
+        // }, err => {
+        //   this.token1 = err;
+        //   //this.basicData.sendErrorNotification(err)
+        // })
       });
   }
 

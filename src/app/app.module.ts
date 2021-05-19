@@ -34,7 +34,7 @@ import { AppVersion } from '@ionic-native/app-version';
 // import { BarcodeScanner } from '@ionic-native/barcode-scanner';
 import { PipesModule } from '../pipes/pipes.module';
 //import { FCM } from '@ionic-native/fcm';
-import {FCM} from '@ionic-native/fcm';
+// import {FCM} from '@ionic-native/fcm';
 // import { InCurrencyPipe } from '../pipes/in-currency/in-currency';
 
 // import { DateTimePipe } from '../pipes/date-time/date-time';
@@ -91,7 +91,7 @@ import {FCM} from '@ionic-native/fcm';
     BasicDataProvider,
    // InAppBrowser,
     //QRScanner,
-    FCM,
+    // FCM,
     PumpDataProvider,
     TransDataProvider,
     SalesDataProvider,

@@ -9,7 +9,7 @@ import { TransporterPage } from './../../TransportersContent/transporter/transpo
 import { PManagerHomePage } from './../../PMAnagerContent/p-manager-home/p-manager-home';
 import { POwnerHomePage } from './../../POwnerContent/p-owner-home/p-owner-home';
 import { DsmHomePage } from './../../DSMContent/dsm-home/dsm-home';
-import { FCM } from '@ionic-native/fcm';
+// import { FCM } from '@ionic-native/fcm';
 /**
  * Generated class for the TdriverDeactivatePage page.
  *
@@ -36,7 +36,7 @@ export class TdriverDeactivatePage {
   constructor(public navCtrl: NavController,
     public platform: Platform,
     public appCtrl: App,
-    public  fcm:FCM,
+    // public  fcm:FCM,
     public events: Events,
     public loadingCtrl:LoadingController,
     public alertCtrl: AlertController,

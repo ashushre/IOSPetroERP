@@ -10,7 +10,7 @@ import { POwnerHomePage } from "../../POwnerContent/p-owner-home/p-owner-home";
 import { PManagerHomePage } from "../../PMAnagerContent/p-manager-home/p-manager-home";
 import { DsmHomePage } from "../../DSMContent/dsm-home/dsm-home";
 import { TransporterPage } from "../../TransportersContent/transporter/transporter";
-import {FCM} from '@ionic-native/fcm';
+// import {FCM} from '@ionic-native/fcm';
 import { LoyaltyDashboardPage } from "../../LoyaltyContent/loyalty-dashboard/loyalty-dashboard";
 
 
@@ -59,7 +59,7 @@ export class LoginPage {
     public storage: Storage,
     public storage1:Storage,
     public appCtrl: App,
-    public fcm:FCM,
+    // public fcm:FCM,
     public events:Events,
     public platform: Platform,
     public modalCtrl: ModalController,
@@ -100,12 +100,12 @@ export class LoginPage {
     }, 1)
     platform.ready()
     .then(() => {
-      this.fcm.getToken().then(token => {
-        this.devicetoken = token;
-     //   this.basicData.sendSuccessNotification(token)
-      }, err => {
-       // this.basicData.sendErrorNotification(err)
-      })
+    //   this.fcm.getToken().then(token => {
+    //     this.devicetoken = token;
+    //  //   this.basicData.sendSuccessNotification(token)
+    //   }, err => {
+    //    // this.basicData.sendErrorNotification(err)
+    //   })
     });
   }
   ionViewDidLoad() {
