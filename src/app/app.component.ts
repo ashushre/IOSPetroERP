@@ -37,6 +37,7 @@ export class MyApp {
   appMenuItems13: Array<MenuItem>;
   appMenuItems21: Array<MenuItem>;
   appMenuItems22: Array<MenuItem>;
+  appMenuItemsAdmin: Array<MenuItem>;
   public rootPage: any;
   public versionNumber: any;
   public previousversionNumber: any;
@@ -60,6 +61,7 @@ export class MyApp {
   pumpCount: number;
   reqCount: number;
   vehicleCount: number;
+  admin: boolean=true;
   constructor(
     public platform: Platform,
     public statusBar: StatusBar,
@@ -221,6 +223,17 @@ export class MyApp {
         { title: 'Change Password', component: "ChangePasswordPage", icon: 'key', badgeCount: '' },
         { title: 'Contact Us', component: "ContactUsPage", icon: 'md-call', badgeCount: '' }
       ];
+      this.appMenuItemsAdmin=[
+        { title: 'Home', component: TransporterPage, icon: 'home', badgeCount: '' },
+        { title: 'PumpDetails', component: "RequestListPage", icon: 'md-git-pull-request', badgeCount: this.reqCount },
+        { title: 'Employees', component: "VehicleListPage", icon: 'md-car', badgeCount: this.vehicleCount },
+        // { title: 'My Drivers', component: "TDriverListPage", icon: 'ios-people', badgeCount: this.driverCount },
+        { title: 'Credit Customer and vehicle', component: "PaymentEntryPage", icon: 'md-cash', badgeCount: '' },
+        { title: 'Loyalty Customers', component: "TransporterReportPage", icon: 'md-paper', badgeCount: '' },
+        { title: 'Quatation', component: "PumpListPage", icon: 'md-barcode', badgeCount: this.pumpCount },
+        { title: 'Multi login', component: "ChangePasswordPage", icon: 'key', badgeCount: '' },
+      
+      ]
     }, err => {
       console.log(err);
     });
@@ -292,6 +305,17 @@ export class MyApp {
         { title: 'Contact Us', component: "ContactUsPage", icon: 'md-call', badgeCount: '' },
         { title: 'Help', component: "ManagerManualPage", icon: 'information-circle', badgeCount: '' }
       ];
+      this.appMenuItemsAdmin=[
+        { title: 'Home', component: TransporterPage, icon: 'home', badgeCount: '' },
+        { title: 'PumpDetails', component: "RequestListPage", icon: 'md-git-pull-request', badgeCount: this.reqCount },
+        { title: 'Employees', component: "VehicleListPage", icon: 'md-car', badgeCount: this.vehicleCount },
+        // { title: 'My Drivers', component: "TDriverListPage", icon: 'ios-people', badgeCount: this.driverCount },
+        { title: 'Credit Customer and vehicle', component: "PaymentEntryPage", icon: 'md-cash', badgeCount: '' },
+        { title: 'Loyalty Customers', component: "TransporterReportPage", icon: 'md-paper', badgeCount: '' },
+        { title: 'Quatation', component: "PumpListPage", icon: 'md-barcode', badgeCount: this.pumpCount },
+        { title: 'Multi login', component: "ChangePasswordPage", icon: 'key', badgeCount: '' },
+      
+      ]
     }, err => {
       console.log(err);
     });
@@ -328,6 +352,17 @@ export class MyApp {
         { title: 'Change Password', component: "ChangePasswordPage", icon: 'key', badgeCount: '' },
         { title: 'Contact Us', component: "ContactUsPage", icon: 'md-call', badgeCount: '' }
       ];
+      this.appMenuItemsAdmin=[
+        { title: 'Home', component: TransporterPage, icon: 'home', badgeCount: '' },
+        { title: 'PumpDetails', component: "RequestListPage", icon: 'md-git-pull-request', badgeCount: this.reqCount },
+        { title: 'Employees', component: "VehicleListPage", icon: 'md-car', badgeCount: this.vehicleCount },
+        // { title: 'My Drivers', component: "TDriverListPage", icon: 'ios-people', badgeCount: this.driverCount },
+        { title: 'Credit Customer and vehicle', component: "PaymentEntryPage", icon: 'md-cash', badgeCount: '' },
+        { title: 'Loyalty Customers', component: "TransporterReportPage", icon: 'md-paper', badgeCount: '' },
+        { title: 'Quatation', component: "PumpListPage", icon: 'md-barcode', badgeCount: this.pumpCount },
+        { title: 'Multi login', component: "ChangePasswordPage", icon: 'key', badgeCount: '' },
+      
+      ]
     }, err => {
       console.log(err);
     });
@@ -358,7 +393,9 @@ export class MyApp {
 
           }
             else{
-            this.rootPage="TdriverAddPage"
+            // this.rootPage="TdriverAddPage"
+            this.rootPage="AdminContentDashboardAdminPage"
+
            //   alert('Came')
   // let alert = this.alertCtrl.create({
   //   message: "Please Update the PetroMapp",
@@ -388,7 +425,7 @@ export class MyApp {
 
         }
       });
- //} 
+ } 
  
   
 
@@ -461,6 +498,7 @@ export class MyApp {
             });
             this.storage.get('userType').then((val) => {
               this.userType = val;
+              this.admin=true;
               if (this.userType == undefined || this.userType == null) {
                 this.rootPage = LoginPage;
               }
@@ -576,6 +614,17 @@ export class MyApp {
                   { title: 'Change Password', component: "ChangePasswordPage", icon: 'key', badgeCount: '' },
                   { title: 'Contact Us', component: "ContactUsPage", icon: 'md-call', badgeCount: '' }
                 ];
+                this.appMenuItemsAdmin=[
+                  { title: 'Home', component: TransporterPage, icon: 'home', badgeCount: '' },
+                  { title: 'PumpDetails', component: "RequestListPage", icon: 'md-git-pull-request', badgeCount: this.reqCount },
+                  { title: 'Employees', component: "VehicleListPage", icon: 'md-car', badgeCount: this.vehicleCount },
+                  // { title: 'My Drivers', component: "TDriverListPage", icon: 'ios-people', badgeCount: this.driverCount },
+                  { title: 'Credit Customer and vehicle', component: "PaymentEntryPage", icon: 'md-cash', badgeCount: '' },
+                  { title: 'Loyalty Customers', component: "TransporterReportPage", icon: 'md-paper', badgeCount: '' },
+                  { title: 'Quatation', component: "PumpListPage", icon: 'md-barcode', badgeCount: this.pumpCount },
+                  { title: 'Multi login', component: "ChangePasswordPage", icon: 'key', badgeCount: '' },
+                
+                ]
               }
             }, err => {
               console.log(err);
@@ -583,7 +632,7 @@ export class MyApp {
       
 
 
- }
+ //}
   }, 
   err => {
       console.log(err);

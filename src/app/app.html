@@ -23,6 +23,8 @@
             <span ion-text color="light" *ngIf="userType==13">SaleMan at Pump</span>
             <span ion-text color="light" *ngIf="userType==21">Customer</span>
             <span ion-text color="light" *ngIf="userType==22">Customer Manager</span>
+            <span ion-text color="light" *ngIf="admin">Super Admin</span>
+
           </ion-col>
         </ion-row>
 
@@ -106,6 +108,15 @@
     <ion-list>
       <div *ngIf="userType==22">
         <button ion-item menuClose class="text-1x" *ngFor="let menuItem of appMenuItems22" (click)="openPage(menuItem)">
+          <ion-icon item-left style="margin-left:10px;" [name]="menuItem.icon" color="primary"></ion-icon>
+          <span ion-text color="primary">{{menuItem.title}} <ion-badge style="background-color:#07388e;" *ngIf="menuItem.badgeCount!==''">{{menuItem.badgeCount}}</ion-badge></span>
+        </button>
+      </div>
+    </ion-list>
+
+    <ion-list>
+      <div *ngIf="admin">
+        <button ion-item menuClose class="text-1x" *ngFor="let menuItem of appMenuItemsAdmin" (click)="openPage(menuItem)">
           <ion-icon item-left style="margin-left:10px;" [name]="menuItem.icon" color="primary"></ion-icon>
           <span ion-text color="primary">{{menuItem.title}} <ion-badge style="background-color:#07388e;" *ngIf="menuItem.badgeCount!==''">{{menuItem.badgeCount}}</ion-badge></span>
         </button>

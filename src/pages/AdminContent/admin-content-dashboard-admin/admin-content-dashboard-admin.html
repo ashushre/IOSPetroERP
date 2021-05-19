@@ -1,0 +1,410 @@
+<ion-header>
+  <ion-navbar hideBackButton>
+    <ion-row>
+      <ion-col col-1>
+        <ion-icon ios="ios-home" style="font-size: 1.7em;color: white;" md="md-home" (click)="home()"></ion-icon>
+      </ion-col>
+      <ion-col col-10>
+        <ion-title class="centerali" text-capitalize>Super Admin</ion-title>
+      </ion-col>
+      <ion-col col-1>
+        <button ion-button float-right menuToggle icon-only style="display: block !important;"  >
+          <ion-icon name='menu'></ion-icon>
+        </button>
+      </ion-col>
+    </ion-row>
+  </ion-navbar>
+</ion-header>
+<!-- Dashboard -->
+ <ion-content padding="true" overflow-scroll="false" has-bouncing="false">
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+
+  <div text-wrap (click)="toggleGroup(8)" [ngClass]="{active: isGroupShown(8)}">
+    <div class="info-box bg-primary">
+      <div class="info-box-content">
+        <ion-row class="mar">
+          <span class="info-box-text"># of Oil Companies</span>
+        </ion-row>
+      </div>
+      <div class="info-box-content" style="text-align:right;">
+        <span class="info-box-number">6
+          <ion-icon item-right [name]="isGroupShown(8) ? '6' : '6'" style="padding-left: 10px;"></ion-icon>
+        </span>
+      </div>
+    </div>
+  </div>
+  <div text-wrap (click)="toggleGroup(8)" [ngClass]="{active: isGroupShown(8)}">
+    <div class="info-box bg-success">
+      <div class="info-box-content">
+        <ion-row class="mar">
+          <span class="info-box-text"># of Countries</span>
+        </ion-row>
+      </div>
+      <div class="info-box-content" style="text-align:right;">
+        <span class="info-box-number">5
+          <ion-icon item-right [name]="isGroupShown(8) ? '6' : '6'" style="padding-left: 10px;"></ion-icon>
+        </span>
+      </div>
+    </div>
+  </div>
+  <div text-wrap (click)="toggleGroup(8)" [ngClass]="{active: isGroupShown(8)}">
+    <div class="info-box bg-primary">
+      <div class="info-box-content">
+        <ion-row class="mar">
+          <span class="info-box-text"># of States</span>
+        </ion-row>
+      </div>
+      <div class="info-box-content" style="text-align:right;">
+        <span class="info-box-number">5
+          <ion-icon item-right [name]="isGroupShown(8) ? '5' : '5'" style="padding-left: 10px;"></ion-icon>
+        </span>
+      </div>
+    </div>
+  </div>
+  <div text-wrap (click)="toggleGroup(8)" [ngClass]="{active: isGroupShown(8)}">
+    <div class="info-box bg-success">
+      <div class="info-box-content">
+        <ion-row class="mar">
+          <span class="info-box-text"># of PUMPS</span>
+        </ion-row>
+      </div>
+      <div class="info-box-content" style="text-align:right;">
+        <span class="info-box-number">56
+          <ion-icon item-right [name]="isGroupShown(8) ? '56' : '56'" style="padding-left: 10px;"></ion-icon>
+        </span>
+      </div>
+    </div>
+  </div>
+  <div text-wrap (click)="toggleGroup(8)" [ngClass]="{active: isGroupShown(8)}">
+    <div class="info-box bg-primary">
+      <div class="info-box-content">
+        <ion-row class="mar">
+          <span class="info-box-text"># of Active Employees</span>
+        </ion-row>
+      </div>
+      <div class="info-box-content" style="text-align:right;">
+        <span class="info-box-number">65
+          <ion-icon item-right [name]="isGroupShown(8) ? '650' : '650'" style="padding-left: 10px;"></ion-icon>
+        </span>
+      </div>
+    </div>
+  </div>
+  <div text-wrap (click)="toggleGroup(8)" [ngClass]="{active: isGroupShown(8)}">
+    <div class="info-box bg-success">
+      <div class="info-box-content">
+        <ion-row class="mar">
+          <span class="info-box-text"># of Active Credit <br>Customer</span>
+        </ion-row>
+      </div>
+      <div class="info-box-content" style="text-align:right;">
+        <span class="info-box-number">35
+          <ion-icon item-right [name]="isGroupShown(8) ? '3560' : '3560'" style="padding-left: 10px;"></ion-icon>
+        </span>
+      </div>
+    </div>
+  </div>
+  <div text-wrap (click)="toggleGroup(8)" [ngClass]="{active: isGroupShown(8)}">
+    <div class="info-box bg-primary">
+      <div class="info-box-content">
+        <ion-row class="mar">
+          <span class="info-box-text"># of Credit Vehicles</span>
+        </ion-row>
+      </div>
+      <div class="info-box-content" style="text-align:right;">
+        <span class="info-box-number">18
+          <ion-icon item-right [name]="isGroupShown(8) ? '18950' : '18950'" style="padding-left: 10px;"></ion-icon>
+        </span>
+      </div>
+    </div>
+  </div>
+  <div text-wrap (click)="toggleGroup(8)" [ngClass]="{active: isGroupShown(8)}">
+    <div class="info-box bg-success">
+      <div class="info-box-content">
+        <ion-row class="mar">
+          <span class="info-box-text"># of Loyalty Customers</span>
+        </ion-row>
+      </div>
+      <div class="info-box-content" style="text-align:right;">
+        <span class="info-box-number">35
+          <ion-icon item-right [name]="isGroupShown(8) ? '35000' : '35000'" style="padding-left: 10px;"></ion-icon>
+        </span>
+      </div>
+    </div>
+  </div>
+  <div text-wrap (click)="toggleGroup(8)" [ngClass]="{active: isGroupShown(8)}">
+    <div class="info-box bg-primary">
+      <div class="info-box-content">
+        <ion-row class="mar">
+          <span class="info-box-text"># of Total USERS IDs</span>
+        </ion-row>
+      </div>
+      <div class="info-box-content" style="text-align:right;">
+        <span class="info-box-number">14
+          <ion-icon item-right [name]="isGroupShown(8) ? '1400' : '1400'" style="padding-left: 10px;"></ion-icon>
+        </span>
+      </div>
+    </div>
+  </div>
+
+
+
+
+</ion-content>
+
+
+<!-- Pumps on PetroERP -->
+<!-- <ion-content padding="true" overflow-scroll="false" has-bouncing="false">
+
+<ion-row align-items-start class="tab-bg-assertive">
+  <ion-col >
+    Pump Name
+  </ion-col>
+  <ion-col  text-right>
+    Oil Co
+  </ion-col>
+  <ion-col  text-right>
+    State             
+  </ion-col>
+</ion-row>
+
+<ion-row *ngFor="let fuel of FuelDetail;let index=index; let odd=odd; let even=even;" class="row" [ngClass]="{ contenttable2: odd, contenttable: even}">
+  <ion-col>
+    {{fuel.Pump}}
+  </ion-col>
+  <ion-col text-right>
+    {{fuel.Oil }}
+  </ion-col>
+  <ion-col text-right>
+    {{fuel.State }}
+  </ion-col>
+</ion-row>
+</ion-content> -->
+
+<!-- Employees -->
+<!-- <ion-content padding="true" overflow-scroll="false" has-bouncing="false">
+
+
+  <ion-item style="color:red;">
+    <ion-label style="color:red;">Select OIl Co Name</ion-label>
+    <ion-select [(ngModel)]="productId" class="form-control" #reqFuel (ionChange)="ProductSelect(reqFuel.value)">
+      <ion-option value=0 selected>All</ion-option>
+    </ion-select>
+  </ion-item>
+  <ion-item style="color:green;">
+    <ion-label style="color:green;">Select States</ion-label>
+    <ion-select [(ngModel)]="productId" class="form-control" #reqFuel (ionChange)="ProductSelect(reqFuel.value)">
+      <ion-option value=0 selected>All</ion-option>
+    </ion-select>
+  </ion-item>
+  <ion-item style="color:blue;">
+    <ion-label style="color:blue;">Pump Name</ion-label>
+    <ion-select [(ngModel)]="productId" class="form-control" #reqFuel (ionChange)="ProductSelect(reqFuel.value)">
+      <ion-option value=0 selected>All</ion-option>
+    </ion-select>
+  </ion-item>
+
+  <ion-row align-items-start class="tab-bg-assertive">
+    <ion-col >
+      Oil Co Name
+    </ion-col>
+    <ion-col  text-right>
+     Pump Name
+    </ion-col>
+    <ion-col  text-right>
+      # of Emp             
+    </ion-col>
+  </ion-row>
+  
+  <ion-row *ngFor="let fuel of Employees;let index=index; let odd=odd; let even=even;" class="row" [ngClass]="{ contenttable2: odd, contenttable: even}">
+    <ion-col>
+      {{fuel.Pump}}
+    </ion-col>
+    <ion-col text-right>
+      {{fuel.Oil }}
+    </ion-col>
+    <ion-col text-right>
+      {{fuel.State }}
+    </ion-col>
+  </ion-row>
+
+  <ion-row  align-items-start>
+    <ion-col class="tab-bg-assertive">
+      <b>Total</b>
+    </ion-col>
+    <ion-col class="tab-bg-assertive" text-right>
+      <b>4</b>
+    </ion-col>
+    <ion-col class="tab-bg-assertive" text-right >
+      <b>105</b>
+    </ion-col>
+  </ion-row>
+
+</ion-content> -->
+
+<!-- CR customer Vehicles  -->
+<!-- <ion-content padding="true" overflow-scroll="false" has-bouncing="false">
+
+
+  <ion-item style="color:blue;">
+    <ion-label style="color:blue;">Pump Name</ion-label>
+    <ion-select [(ngModel)]="productId" class="form-control" #reqFuel (ionChange)="ProductSelect(reqFuel.value)">
+      <ion-option value=0 selected>All</ion-option>
+    </ion-select>
+  </ion-item>
+<div>
+  <ion-scroll  direction="xy" style="width: 500px; height: 260px">
+
+  <ion-row align-items-start class="tab-bg-assertive">
+    <ion-col >
+      Cr Customer Name
+    </ion-col>
+    <ion-col  text-right>
+     #of Pumps
+    </ion-col>
+    <ion-col  text-right>
+      # of Vehicles             
+    </ion-col>
+    <ion-col  text-right>
+     Credit limit Allotted            
+    </ion-col>
+    <ion-col  text-right>
+      Credit limit Used            
+            
+    </ion-col>
+    <ion-col  text-right>
+     % Credit limit Used            
+            
+    </ion-col>
+  </ion-row>
+  
+  <ion-row *ngFor="let fuel of Credits;let index=index; let odd=odd; let even=even;" class="row" [ngClass]="{ contenttable2: odd, contenttable: even}">
+    <ion-col>
+      {{fuel.Pump}}
+    </ion-col>
+    <ion-col text-right>
+      {{fuel.Oil }}
+    </ion-col>
+    <ion-col text-right>
+      {{fuel.State }}
+    </ion-col>
+    <ion-col text-right>
+      {{fuel.allot }}
+    </ion-col>
+    <ion-col text-right>
+      {{fuel.used }}
+    </ion-col>
+    <ion-col text-right>
+      {{fuel.persen }}%
+    </ion-col>
+  </ion-row>
+
+  <ion-row  align-items-start>
+    <ion-col class="tab-bg-assertive">
+      <b>Total</b>
+    </ion-col>
+    <ion-col class="tab-bg-assertive" text-right>
+      <b>149</b>
+    </ion-col>
+    <ion-col class="tab-bg-assertive" text-right >
+      <b>3800</b>
+    </ion-col>
+    <ion-col class="tab-bg-assertive">
+      <b>9,77,40,000</b>
+    </ion-col>
+    <ion-col class="tab-bg-assertive" text-right>
+      <b>5,45,84,000</b>
+    </ion-col>
+    <ion-col class="tab-bg-assertive" text-right >
+      <b>56%</b>
+    </ion-col>
+  </ion-row>
+</ion-scroll>
+</div>
+</ion-content>  -->
+
+<!-- Loyalty Customer-->
+<!-- <ion-content padding="true" overflow-scroll="false" has-bouncing="false">
+
+
+  <ion-item style="color:blue;">
+    <ion-label style="color:blue;">Loyalty Customer Name</ion-label>
+    <ion-select [(ngModel)]="productId" class="form-control" #reqFuel (ionChange)="ProductSelect(reqFuel.value)">
+      <ion-option value=0 selected>All</ion-option>
+    </ion-select>
+  </ion-item>
+  
+<div>
+  <ion-scroll  direction="xy" style="width: 500px; height: 291px">
+
+  <ion-row align-items-start class="tab-bg-assertive">
+    <ion-col col-2>
+      Cr Customer Name
+    </ion-col>
+    <ion-col col-2 text-right>
+     Cr Customer User ID
+    </ion-col>
+    <ion-col col-2 text-right>
+     Mobile #           
+    </ion-col>
+    <ion-col col-2 text-right>
+     #of Pumps          
+    </ion-col>
+    <ion-col col-2 text-right>
+      Earned loyalty points           
+            
+    </ion-col>
+  </ion-row>
+  
+  <ion-row *ngFor="let fuel of loyalty;let index=index; let odd=odd; let even=even;" class="row" [ngClass]="{ contenttable2: odd, contenttable: even}">
+    <ion-col col-2>
+      {{fuel.Pump}}
+    </ion-col>
+    <ion-col col-2 text-right>
+      {{fuel.Test }}
+    </ion-col>
+    <ion-col col-2 text-right>
+      {{fuel.Oil }}
+    </ion-col>
+    <ion-col col-2 text-right>
+      {{fuel.State }}
+    </ion-col>
+    <ion-col col-2 text-right>
+      {{fuel.allot }}
+    </ion-col>
+    <ion-col col-2 text-right>
+      {{fuel.used }}
+    </ion-col>
+  </ion-row>
+
+  <ion-row  align-items-start>
+    <ion-col col-2 class="tab-bg-assertive">
+      <b>Total</b>
+    </ion-col>
+    <ion-col col-2 class="tab-bg-assertive" text-right>
+      <b> -</b>
+    </ion-col>
+    <ion-col col-2 class="tab-bg-assertive" text-right >
+      <b>- </b>
+    </ion-col>
+    <ion-col col-2  class="tab-bg-assertive">
+      <b>9,77,40,000</b>
+    </ion-col>
+    <ion-col col-2 class="tab-bg-assertive" text-right>
+      <b>5,45,84,000</b>
+    </ion-col>
+  </ion-row>
+</ion-scroll>
+</div>
+</ion-content> -->
+
+<!-- <ion-footer>
+  <ion-row>
+    <ion-col col-12 style="padding: 0;">
+      <button ion-button color="positive" full (click)="reportRequest()" class="footer-btn">
+        Reports
+      </button>
+    </ion-col>
+  </ion-row>
+</ion-footer> -->

@@ -1,0 +1,13 @@
+page-admin-content-dashboard-admin {
+    ion-scroll .scroll-content {
+        left: -15px;
+        right: 0;
+        top: -91px;
+        bottom: 17px;
+        position: absolute;
+        overflow-y: hidden;
+        overflow-x: hidden;
+        -webkit-overflow-scrolling: touch;
+        will-change: scroll-position;
+    }
+}
